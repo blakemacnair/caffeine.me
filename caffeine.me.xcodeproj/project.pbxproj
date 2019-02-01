@@ -15,6 +15,17 @@
 		88CF113C2204056000032236 /* CMViewLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 88CF113A2204056000032236 /* CMViewLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		88CF11492204059500032236 /* CMFourSquareLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 88CF11472204059500032236 /* CMFourSquareLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		88CF1156220405B000032236 /* CMLocationLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 88CF1154220405B000032236 /* CMLocationLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88CF115F220406B600032236 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115B220406B500032236 /* RxCocoa.framework */; };
+		88CF1160220406B600032236 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115C220406B500032236 /* SnapKit.framework */; };
+		88CF1161220406B600032236 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115D220406B500032236 /* RxDataSources.framework */; };
+		88CF1162220406B600032236 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115E220406B600032236 /* RxSwift.framework */; };
+		88CF1163220406CE00032236 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115B220406B500032236 /* RxCocoa.framework */; };
+		88CF1164220406CE00032236 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115E220406B600032236 /* RxSwift.framework */; };
+		88CF1165220406DD00032236 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115B220406B500032236 /* RxCocoa.framework */; };
+		88CF1166220406DD00032236 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115E220406B600032236 /* RxSwift.framework */; };
+		88CF1167220406EF00032236 /* CMFourSquareLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF11452204059500032236 /* CMFourSquareLayer.framework */; };
+		88CF1168220406F600032236 /* CMFourSquareLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF11452204059500032236 /* CMFourSquareLayer.framework */; };
+		88CF1169220406F600032236 /* CMLocationLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF1152220405B000032236 /* CMLocationLayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +45,10 @@
 		88CF1152220405B000032236 /* CMLocationLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CMLocationLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CF1154220405B000032236 /* CMLocationLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMLocationLayer.h; sourceTree = "<group>"; };
 		88CF1155220405B000032236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88CF115B220406B500032236 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		88CF115C220406B500032236 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		88CF115D220406B500032236 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
+		88CF115E220406B600032236 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88CF1167220406EF00032236 /* CMFourSquareLayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +64,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88CF1168220406F600032236 /* CMFourSquareLayer.framework in Frameworks */,
+				88CF1169220406F600032236 /* CMLocationLayer.framework in Frameworks */,
+				88CF115F220406B600032236 /* RxCocoa.framework in Frameworks */,
+				88CF1160220406B600032236 /* SnapKit.framework in Frameworks */,
+				88CF1161220406B600032236 /* RxDataSources.framework in Frameworks */,
+				88CF1162220406B600032236 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88CF1163220406CE00032236 /* RxCocoa.framework in Frameworks */,
+				88CF1164220406CE00032236 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88CF1165220406DD00032236 /* RxCocoa.framework in Frameworks */,
+				88CF1166220406DD00032236 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +102,7 @@
 				88CF11462204059500032236 /* CMFourSquareLayer */,
 				88CF1153220405B000032236 /* CMLocationLayer */,
 				88CF111F2203FF3B00032236 /* Products */,
+				88CF115A220406B500032236 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +158,17 @@
 			);
 			name = CMLocationLayer;
 			path = Sources/CMLocationLayer;
+			sourceTree = "<group>";
+		};
+		88CF115A220406B500032236 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88CF115B220406B500032236 /* RxCocoa.framework */,
+				88CF115D220406B500032236 /* RxDataSources.framework */,
+				88CF115E220406B600032236 /* RxSwift.framework */,
+				88CF115C220406B500032236 /* SnapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,7 +564,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = CMViewLayer/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/CMViewLayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -553,7 +595,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = CMViewLayer/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/CMViewLayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -580,7 +626,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = CMFourSquareLayer/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/CMFourSquareLayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -607,7 +657,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = CMFourSquareLayer/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/CMFourSquareLayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -634,7 +688,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = CMLocationLayer/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/CMLocationLayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -661,7 +719,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = CMLocationLayer/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/CMLocationLayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
