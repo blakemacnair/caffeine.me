@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		88CF11222203FF3B00032236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF11212203FF3B00032236 /* AppDelegate.swift */; };
-		88CF11242203FF3B00032236 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF11232203FF3B00032236 /* ViewController.swift */; };
-		88CF11272203FF3B00032236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CF11252203FF3B00032236 /* Main.storyboard */; };
 		88CF11292203FF3D00032236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CF11282203FF3D00032236 /* Assets.xcassets */; };
 		88CF112C2203FF3D00032236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CF112A2203FF3D00032236 /* LaunchScreen.storyboard */; };
 		88CF113C2204056000032236 /* CMViewLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 88CF113A2204056000032236 /* CMViewLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,13 +24,14 @@
 		88CF1167220406EF00032236 /* CMFourSquareLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF11452204059500032236 /* CMFourSquareLayer.framework */; };
 		88CF1168220406F600032236 /* CMFourSquareLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF11452204059500032236 /* CMFourSquareLayer.framework */; };
 		88CF1169220406F600032236 /* CMLocationLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF1152220405B000032236 /* CMLocationLayer.framework */; };
+		88CF116F2204090600032236 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF116D2204090600032236 /* AppCoordinator.swift */; };
+		88CF11702204090600032236 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF116E2204090600032236 /* BaseCoordinator.swift */; };
+		88CF117122040A0300032236 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115E220406B600032236 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		88CF111E2203FF3B00032236 /* caffeine.me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caffeine.me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CF11212203FF3B00032236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		88CF11232203FF3B00032236 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		88CF11262203FF3B00032236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		88CF11282203FF3D00032236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88CF112B2203FF3D00032236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88CF112D2203FF3D00032236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +48,8 @@
 		88CF115C220406B500032236 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		88CF115D220406B500032236 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		88CF115E220406B600032236 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		88CF116D2204090600032236 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		88CF116E2204090600032236 /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88CF117122040A0300032236 /* RxSwift.framework in Frameworks */,
 				88CF1167220406EF00032236 /* CMFourSquareLayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,8 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				88CF11212203FF3B00032236 /* AppDelegate.swift */,
-				88CF11232203FF3B00032236 /* ViewController.swift */,
-				88CF11252203FF3B00032236 /* Main.storyboard */,
 				88CF11282203FF3D00032236 /* Assets.xcassets */,
 				88CF112A2203FF3D00032236 /* LaunchScreen.storyboard */,
 				88CF112D2203FF3D00032236 /* Info.plist */,
@@ -133,6 +133,7 @@
 		88CF11392204056000032236 /* CMViewLayer */ = {
 			isa = PBXGroup;
 			children = (
+				88CF116C2204088200032236 /* Base */,
 				88CF113A2204056000032236 /* CMViewLayer.h */,
 				88CF113B2204056000032236 /* Info.plist */,
 			);
@@ -169,6 +170,15 @@
 				88CF115C220406B500032236 /* SnapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88CF116C2204088200032236 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				88CF116D2204090600032236 /* AppCoordinator.swift */,
+				88CF116E2204090600032236 /* BaseCoordinator.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +297,7 @@
 					};
 					88CF11372204056000032236 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					88CF11442204059500032236 = {
 						CreatedOnToolsVersion = 10.1;
@@ -324,7 +335,6 @@
 			files = (
 				88CF112C2203FF3D00032236 /* LaunchScreen.storyboard in Resources */,
 				88CF11292203FF3D00032236 /* Assets.xcassets in Resources */,
-				88CF11272203FF3B00032236 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +366,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88CF11242203FF3B00032236 /* ViewController.swift in Sources */,
 				88CF11222203FF3B00032236 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,6 +374,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88CF116F2204090600032236 /* AppCoordinator.swift in Sources */,
+				88CF11702204090600032236 /* BaseCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,14 +396,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		88CF11252203FF3B00032236 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				88CF11262203FF3B00032236 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		88CF112A2203FF3D00032236 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -525,6 +528,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = caffeine.me/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -542,6 +549,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = caffeine.me/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -557,6 +568,7 @@
 		88CF113D2204056000032236 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -578,6 +590,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = macnair.CMViewLayer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -588,6 +601,7 @@
 		88CF113E2204056000032236 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
