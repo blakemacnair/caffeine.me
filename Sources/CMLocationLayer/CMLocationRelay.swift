@@ -18,10 +18,10 @@ public protocol CMLocationRelayProtocol {
 
     func requestAuthorization() -> Observable<CLAuthorizationStatus>
 
-    func startUpdatingLocation() -> Bool
+    @discardableResult func startUpdatingLocation() -> Bool
     func stopUpdatingLocation()
 
-    func startUpdatingHeading() -> Bool
+    @discardableResult func startUpdatingHeading() -> Bool
     func stopUpdatingHeading()
 }
 
@@ -63,7 +63,7 @@ public final class CMLocationRelay: CMLocationRelayProtocol {
         return self.authStatus
     }
 
-    public func startUpdatingLocation() -> Bool {
+    @discardableResult public func startUpdatingLocation() -> Bool {
         guard CLLocationManager.locationServicesEnabled() else { return false }
         manager.startUpdatingLocation()
         return true
@@ -73,7 +73,7 @@ public final class CMLocationRelay: CMLocationRelayProtocol {
         manager.stopUpdatingLocation()
     }
 
-    public func startUpdatingHeading() -> Bool {
+    @discardableResult public func startUpdatingHeading() -> Bool {
         guard CLLocationManager.headingAvailable() else { return false }
         manager.startUpdatingHeading()
         return true
