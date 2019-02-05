@@ -9,7 +9,23 @@
 import RxSwift
 import RxCocoa
 import RxCoreLocation
+import CoreLocation
 
-public final class CMLocationRelay {
+public protocol CMLocationRelayProtocol {
+    var authStatus: Observable<CLAuthorizationStatus> { get }
+    var locationServicesEnabled: Observable<Bool> { get }
+    var placemark: Observable<CLPlacemark> { get }
+    var heading: Observable<CLHeading> { get }
+
+    func requestAuthorization() -> Observable<CLAuthorizationStatus>
+
+    func startUpdatingLocation() -> Bool
+    func stopUpdatingLocation()
+
+    func startUpdatingHeading() -> Bool
+    func stopUpdatingHeading() -> Bool
+}
+
+public final class CMLocationRelay: CMLocationRelayProtocol {
 
 }
