@@ -11,6 +11,7 @@
 		887209ED2209445A007B4A18 /* RxHttpClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EC2209445A007B4A18 /* RxHttpClient.framework */; };
 		887209EF220944B5007B4A18 /* RxMKMapView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EE220944B5007B4A18 /* RxMKMapView.framework */; };
 		887209F122094550007B4A18 /* CMLocationRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887209F022094550007B4A18 /* CMLocationRelay.swift */; };
+		887209F6220955CB007B4A18 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887209F5220955CB007B4A18 /* MapKit.framework */; };
 		88CF11222203FF3B00032236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF11212203FF3B00032236 /* AppDelegate.swift */; };
 		88CF11292203FF3D00032236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CF11282203FF3D00032236 /* Assets.xcassets */; };
 		88CF112C2203FF3D00032236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CF112A2203FF3D00032236 /* LaunchScreen.storyboard */; };
@@ -96,6 +97,7 @@
 		887209EC2209445A007B4A18 /* RxHttpClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxHttpClient.framework; path = Carthage/Build/iOS/RxHttpClient.framework; sourceTree = "<group>"; };
 		887209EE220944B5007B4A18 /* RxMKMapView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMKMapView.framework; path = Carthage/Build/iOS/RxMKMapView.framework; sourceTree = "<group>"; };
 		887209F022094550007B4A18 /* CMLocationRelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLocationRelay.swift; sourceTree = "<group>"; };
+		887209F5220955CB007B4A18 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		88CF111E2203FF3B00032236 /* caffeine.me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caffeine.me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CF11212203FF3B00032236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88CF11282203FF3D00032236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			files = (
 				88CF118522040DBC00032236 /* SnapKit.framework in Frameworks */,
 				88CF117F22040DBC00032236 /* RxCocoa.framework in Frameworks */,
+				887209F6220955CB007B4A18 /* MapKit.framework in Frameworks */,
 				88CF117122040A0300032236 /* RxSwift.framework in Frameworks */,
 				88CF117722040DBC00032236 /* CMFourSquareLayer.framework in Frameworks */,
 				88CF118122040DBC00032236 /* RxDataSources.framework in Frameworks */,
@@ -241,6 +244,7 @@
 		88CF115A220406B500032236 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				887209F5220955CB007B4A18 /* MapKit.framework */,
 				887209EE220944B5007B4A18 /* RxMKMapView.framework */,
 				887209EC2209445A007B4A18 /* RxHttpClient.framework */,
 				887209EA2209443C007B4A18 /* RxCoreLocation.framework */,
@@ -381,6 +385,11 @@
 				TargetAttributes = {
 					88CF111D2203FF3B00032236 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					88CF11372204056000032236 = {
 						CreatedOnToolsVersion = 10.1;
