@@ -7,6 +7,8 @@ import RxSwift
 import RxCocoa
 import UIKit
 
+import CMLocationLayer
+
 public final class AppCoordinator: BaseCoordinator<Void> {
 
     private let window: UIWindow

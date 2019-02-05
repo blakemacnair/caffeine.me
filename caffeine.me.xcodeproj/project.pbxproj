@@ -10,6 +10,7 @@
 		887209EB2209443C007B4A18 /* RxCoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EA2209443C007B4A18 /* RxCoreLocation.framework */; };
 		887209ED2209445A007B4A18 /* RxHttpClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EC2209445A007B4A18 /* RxHttpClient.framework */; };
 		887209EF220944B5007B4A18 /* RxMKMapView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EE220944B5007B4A18 /* RxMKMapView.framework */; };
+		887209F122094550007B4A18 /* CMLocationRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887209F022094550007B4A18 /* CMLocationRelay.swift */; };
 		88CF11222203FF3B00032236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF11212203FF3B00032236 /* AppDelegate.swift */; };
 		88CF11292203FF3D00032236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CF11282203FF3D00032236 /* Assets.xcassets */; };
 		88CF112C2203FF3D00032236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CF112A2203FF3D00032236 /* LaunchScreen.storyboard */; };
@@ -94,6 +95,7 @@
 		887209EA2209443C007B4A18 /* RxCoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCoreLocation.framework; path = Carthage/Build/iOS/RxCoreLocation.framework; sourceTree = "<group>"; };
 		887209EC2209445A007B4A18 /* RxHttpClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxHttpClient.framework; path = Carthage/Build/iOS/RxHttpClient.framework; sourceTree = "<group>"; };
 		887209EE220944B5007B4A18 /* RxMKMapView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMKMapView.framework; path = Carthage/Build/iOS/RxMKMapView.framework; sourceTree = "<group>"; };
+		887209F022094550007B4A18 /* CMLocationRelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLocationRelay.swift; sourceTree = "<group>"; };
 		88CF111E2203FF3B00032236 /* caffeine.me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caffeine.me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CF11212203FF3B00032236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88CF11282203FF3D00032236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			children = (
 				88CF1154220405B000032236 /* CMLocationLayer.h */,
 				88CF1155220405B000032236 /* Info.plist */,
+				887209F022094550007B4A18 /* CMLocationRelay.swift */,
 			);
 			name = CMLocationLayer;
 			path = Sources/CMLocationLayer;
@@ -385,6 +388,7 @@
 					};
 					88CF1151220405B000032236 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -471,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				887209F122094550007B4A18 /* CMLocationRelay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,6 +801,7 @@
 		88CF1158220405B000032236 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -817,6 +823,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = macnair.CMLocationLayer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -827,6 +834,7 @@
 		88CF1159220405B000032236 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
