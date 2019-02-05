@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		887209EB2209443C007B4A18 /* RxCoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EA2209443C007B4A18 /* RxCoreLocation.framework */; };
+		887209ED2209445A007B4A18 /* RxHttpClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EC2209445A007B4A18 /* RxHttpClient.framework */; };
 		88CF11222203FF3B00032236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF11212203FF3B00032236 /* AppDelegate.swift */; };
 		88CF11292203FF3D00032236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CF11282203FF3D00032236 /* Assets.xcassets */; };
 		88CF112C2203FF3D00032236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CF112A2203FF3D00032236 /* LaunchScreen.storyboard */; };
@@ -88,6 +90,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		887209EA2209443C007B4A18 /* RxCoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCoreLocation.framework; path = Carthage/Build/iOS/RxCoreLocation.framework; sourceTree = "<group>"; };
+		887209EC2209445A007B4A18 /* RxHttpClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxHttpClient.framework; path = Carthage/Build/iOS/RxHttpClient.framework; sourceTree = "<group>"; };
 		88CF111E2203FF3B00032236 /* caffeine.me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caffeine.me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CF11212203FF3B00032236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88CF11282203FF3D00032236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				887209ED2209445A007B4A18 /* RxHttpClient.framework in Frameworks */,
 				88CF1163220406CE00032236 /* RxCocoa.framework in Frameworks */,
 				88CF1164220406CE00032236 /* RxSwift.framework in Frameworks */,
 			);
@@ -153,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				887209EB2209443C007B4A18 /* RxCoreLocation.framework in Frameworks */,
 				88CF1165220406DD00032236 /* RxCocoa.framework in Frameworks */,
 				88CF1166220406DD00032236 /* RxSwift.framework in Frameworks */,
 			);
@@ -229,6 +235,8 @@
 		88CF115A220406B500032236 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				887209EC2209445A007B4A18 /* RxHttpClient.framework */,
+				887209EA2209443C007B4A18 /* RxCoreLocation.framework */,
 				88CF115B220406B500032236 /* RxCocoa.framework */,
 				88CF115D220406B500032236 /* RxDataSources.framework */,
 				88CF115E220406B600032236 /* RxSwift.framework */,
