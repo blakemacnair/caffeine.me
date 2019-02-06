@@ -12,6 +12,10 @@
 		887209EF220944B5007B4A18 /* RxMKMapView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EE220944B5007B4A18 /* RxMKMapView.framework */; };
 		887209F122094550007B4A18 /* CMLocationRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887209F022094550007B4A18 /* CMLocationRelay.swift */; };
 		887209F6220955CB007B4A18 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887209F5220955CB007B4A18 /* MapKit.framework */; };
+		88720A10220B715F007B4A18 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A0F220B715F007B4A18 /* MapViewController.swift */; };
+		88720A12220B717E007B4A18 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A11220B717E007B4A18 /* MapCoordinator.swift */; };
+		88720A14220B7188007B4A18 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A13220B7188007B4A18 /* MapViewModel.swift */; };
+		88720A16220B719D007B4A18 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A15220B719D007B4A18 /* MapInteractor.swift */; };
 		88CF11222203FF3B00032236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF11212203FF3B00032236 /* AppDelegate.swift */; };
 		88CF11292203FF3D00032236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CF11282203FF3D00032236 /* Assets.xcassets */; };
 		88CF112C2203FF3D00032236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CF112A2203FF3D00032236 /* LaunchScreen.storyboard */; };
@@ -98,6 +102,10 @@
 		887209EE220944B5007B4A18 /* RxMKMapView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMKMapView.framework; path = Carthage/Build/iOS/RxMKMapView.framework; sourceTree = "<group>"; };
 		887209F022094550007B4A18 /* CMLocationRelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLocationRelay.swift; sourceTree = "<group>"; };
 		887209F5220955CB007B4A18 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		88720A0F220B715F007B4A18 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		88720A11220B717E007B4A18 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
+		88720A13220B7188007B4A18 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		88720A15220B719D007B4A18 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
 		88CF111E2203FF3B00032236 /* caffeine.me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caffeine.me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CF11212203FF3B00032236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88CF11282203FF3D00032236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -175,6 +183,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88720A0E220B7132007B4A18 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				88720A0F220B715F007B4A18 /* MapViewController.swift */,
+				88720A11220B717E007B4A18 /* MapCoordinator.swift */,
+				88720A13220B7188007B4A18 /* MapViewModel.swift */,
+				88720A15220B719D007B4A18 /* MapInteractor.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		88CF11152203FF3B00032236 = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +231,7 @@
 		88CF11392204056000032236 /* CMViewLayer */ = {
 			isa = PBXGroup;
 			children = (
+				88720A0E220B7132007B4A18 /* Map */,
 				88CF116C2204088200032236 /* Base */,
 				88CF113A2204056000032236 /* CMViewLayer.h */,
 				88CF113B2204056000032236 /* Info.plist */,
@@ -551,6 +571,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				88CF116F2204090600032236 /* AppCoordinator.swift in Sources */,
+				88720A14220B7188007B4A18 /* MapViewModel.swift in Sources */,
+				88720A12220B717E007B4A18 /* MapCoordinator.swift in Sources */,
+				88720A16220B719D007B4A18 /* MapInteractor.swift in Sources */,
+				88720A10220B715F007B4A18 /* MapViewController.swift in Sources */,
 				88CF11702204090600032236 /* BaseCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
