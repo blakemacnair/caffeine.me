@@ -17,6 +17,7 @@
 		88720A14220B7188007B4A18 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A13220B7188007B4A18 /* MapViewModel.swift */; };
 		88720A16220B719D007B4A18 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A15220B719D007B4A18 /* MapInteractor.swift */; };
 		88720A18220BBC49007B4A18 /* CMFourSquareRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A17220BBC49007B4A18 /* CMFourSquareRelay.swift */; };
+		88720A1B220BC5A3007B4A18 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A1A220BC5A3007B4A18 /* Venue.swift */; };
 		88CF11222203FF3B00032236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF11212203FF3B00032236 /* AppDelegate.swift */; };
 		88CF11292203FF3D00032236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CF11282203FF3D00032236 /* Assets.xcassets */; };
 		88CF112C2203FF3D00032236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CF112A2203FF3D00032236 /* LaunchScreen.storyboard */; };
@@ -108,6 +109,7 @@
 		88720A13220B7188007B4A18 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		88720A15220B719D007B4A18 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
 		88720A17220BBC49007B4A18 /* CMFourSquareRelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMFourSquareRelay.swift; sourceTree = "<group>"; };
+		88720A1A220BC5A3007B4A18 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		88CF111E2203FF3B00032236 /* caffeine.me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caffeine.me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CF11212203FF3B00032236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88CF11282203FF3D00032236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		88720A19220BC258007B4A18 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				88720A1A220BC5A3007B4A18 /* Venue.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88720A18220BBC49007B4A18 /* CMFourSquareRelay.swift in Sources */,
+				88720A1B220BC5A3007B4A18 /* Venue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
