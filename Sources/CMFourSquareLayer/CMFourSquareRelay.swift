@@ -20,6 +20,7 @@ public final class CMFourSquareRelay {
 
     private let clientID = "MEKWFEJD1WCVDO4WREKDW0D5VMVACYVQXZVSWEGY5L320CRM"
     private let clientSecret = "1B2NPOFD5BBVCYHYZEZNSXUMZRCZBLX002SOU5XHTY10KEMZ"
+    private let version = "20180901"
 
     public init() {
         self.client = HttpClient()
@@ -32,7 +33,7 @@ public final class CMFourSquareRelay {
         let params: [String: String] = [
             "client_id": clientID,
             "client_secret": clientSecret,
-            "v": "20180323",
+            "v": version,
             "ll": "40.7243,-74.0018",
             "query": "coffee",
             "limit": "1"
