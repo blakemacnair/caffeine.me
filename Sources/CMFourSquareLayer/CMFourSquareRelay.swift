@@ -49,10 +49,7 @@ public final class CMFourSquareRelay: CMFourSquareRelayProtocol {
                                               radius: radius,
                                               categoryID: Category.CoffeeShop.id)
 
-        let baseURLString = "https://api.foursquare.com/v2"
-        let endpoint = "venues/search"
-        var url = URL(baseUrl: baseURLString, parameters: params)!
-        url.appendPathComponent(endpoint)
+        let url = CMFourSquareURLGenerator.venueSearchEndpoint(parameters: params)
         return client.requestData(url: url)
             .decode(VenueSearchResponse.self)
             .map { $0.response.venues }
