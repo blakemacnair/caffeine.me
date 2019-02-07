@@ -19,7 +19,8 @@ class VenueSearchResponseTests: XCTestCase {
 
     func testDecoding() {
         let response = decodeObject(VenueSearchResponse.self, jsonFileName: "venueSearchResponse")
-        print(response)
+        XCTAssertEqual(response.meta.code, 200)
+        XCTAssertEqual(response.response.venues.count, 12)
     }
 
 }
