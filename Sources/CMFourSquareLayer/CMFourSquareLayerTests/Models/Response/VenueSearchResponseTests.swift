@@ -1,5 +1,5 @@
 //
-//  CMFourSquareLayerTests.swift
+//  VenueSearchResponseTests.swift
 //  CMFourSquareLayerTests
 //
 //  Created by Blake Macnair on 2/6/19.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class CMFourSquareLayerTests: XCTestCase {
+class VenueSearchResponseTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

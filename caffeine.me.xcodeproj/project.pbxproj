@@ -21,8 +21,9 @@
 		88720A1D220BCB97007B4A18 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A1C220BCB97007B4A18 /* Category.swift */; };
 		88720A20220BCDB7007B4A18 /* VenueSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A1F220BCDB7007B4A18 /* VenueSearchResponse.swift */; };
 		88720A22220BCDDB007B4A18 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A21220BCDDB007B4A18 /* Meta.swift */; };
-		88720A2A220BCEE0007B4A18 /* CMFourSquareLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A29220BCEE0007B4A18 /* CMFourSquareLayerTests.swift */; };
 		88720A2C220BCEE0007B4A18 /* CMFourSquareLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF11452204059500032236 /* CMFourSquareLayer.framework */; };
+		88720A35220BD035007B4A18 /* VenueSearchResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A34220BD035007B4A18 /* VenueSearchResponseTests.swift */; };
+		88720A38220BD05D007B4A18 /* VenueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A37220BD05D007B4A18 /* VenueTests.swift */; };
 		88CF11222203FF3B00032236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF11212203FF3B00032236 /* AppDelegate.swift */; };
 		88CF11292203FF3D00032236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CF11282203FF3D00032236 /* Assets.xcassets */; };
 		88CF112C2203FF3D00032236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CF112A2203FF3D00032236 /* LaunchScreen.storyboard */; };
@@ -126,8 +127,9 @@
 		88720A1F220BCDB7007B4A18 /* VenueSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueSearchResponse.swift; sourceTree = "<group>"; };
 		88720A21220BCDDB007B4A18 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		88720A27220BCEE0007B4A18 /* CMFourSquareLayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CMFourSquareLayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		88720A29220BCEE0007B4A18 /* CMFourSquareLayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMFourSquareLayerTests.swift; sourceTree = "<group>"; };
 		88720A2B220BCEE0007B4A18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88720A34220BD035007B4A18 /* VenueSearchResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueSearchResponseTests.swift; sourceTree = "<group>"; };
+		88720A37220BD05D007B4A18 /* VenueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueTests.swift; sourceTree = "<group>"; };
 		88CF111E2203FF3B00032236 /* caffeine.me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caffeine.me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CF11212203FF3B00032236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88CF11282203FF3D00032236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -246,10 +248,27 @@
 		88720A28220BCEE0007B4A18 /* CMFourSquareLayerTests */ = {
 			isa = PBXGroup;
 			children = (
-				88720A29220BCEE0007B4A18 /* CMFourSquareLayerTests.swift */,
+				88720A32220BCFE7007B4A18 /* Models */,
 				88720A2B220BCEE0007B4A18 /* Info.plist */,
 			);
 			path = CMFourSquareLayerTests;
+			sourceTree = "<group>";
+		};
+		88720A32220BCFE7007B4A18 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88720A33220BCFF2007B4A18 /* Response */,
+				88720A37220BD05D007B4A18 /* VenueTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88720A33220BCFF2007B4A18 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				88720A34220BD035007B4A18 /* VenueSearchResponseTests.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		88CF11152203FF3B00032236 = {
@@ -485,6 +504,7 @@
 				TargetAttributes = {
 					88720A26220BCEE0007B4A18 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					88CF111D2203FF3B00032236 = {
 						CreatedOnToolsVersion = 10.1;
@@ -654,7 +674,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88720A2A220BCEE0007B4A18 /* CMFourSquareLayerTests.swift in Sources */,
+				88720A35220BD035007B4A18 /* VenueSearchResponseTests.swift in Sources */,
+				88720A38220BD05D007B4A18 /* VenueTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,6 +760,7 @@
 		88720A30220BCEE0007B4A18 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Sources/CMFourSquareLayer/CMFourSquareLayerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -748,6 +770,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = macnair.CMFourSquareLayerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -756,6 +779,7 @@
 		88720A31220BCEE0007B4A18 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Sources/CMFourSquareLayer/CMFourSquareLayerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
