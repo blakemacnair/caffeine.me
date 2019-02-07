@@ -9,9 +9,11 @@
 import RxSwift
 import RxCocoa
 
+import class MapKit.MKPointAnnotation
+
 enum MapViewState {
     case loading
-    case ready
+    case ready(annotations: [MKPointAnnotation])
 }
 
 enum MapViewAction {
@@ -24,5 +26,4 @@ protocol MapViewModelProtocol {
 }
 
 struct MapViewModel {
-    
 }

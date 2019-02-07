@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import RxCocoa
 
 import MapKit
 import RxMKMapView
@@ -15,10 +16,19 @@ final class MapViewController: UIViewController {
 
     private let rootView = MKMapView()
 
+    private let annotationsRelay = BehaviorRelay<[MKPointAnnotation]>(value: [])
     private let disposeBag = DisposeBag()
 
-    convenience init() {
+    convenience init(viewModel: MapViewModelProtocol) {
         self.init(nibName: nil, bundle: nil)
+
+        annotationsRelay
+            .asDriver()
+            .drive(rootView.rx.annotations)
+            .disposed(by: disposeBag)
+
+        bindEvents(to: viewModel)
+        bindToState(from: viewModel)
     }
 
     override func loadView() {
@@ -26,25 +36,38 @@ final class MapViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-        let chicagoLocation = CLLocationCoordinate2D(latitude: 41.8781,
-                                                     longitude: -87.6298)
+        startUpdatingUserLocation()
+    }
 
-        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        let chicagoRegion = MKCoordinateRegion(center: chicagoLocation, span: span)
+    // MARK: - Private
 
-        rootView.setRegion(chicagoRegion, animated: true)
-
-        let chicagoAnnotation = MKPointAnnotation()
-        chicagoAnnotation.coordinate = chicagoLocation
-        chicagoAnnotation.title = "Chicago"
-        chicagoAnnotation.subtitle = "Illinois"
-
+    private func startUpdatingUserLocation() {
         rootView.setUserTrackingMode(.follow, animated: true)
+        rootView.rx.didUpdateUserLocation
+            .subscribe(onNext: { userloc in
+                self.rootView.setUserTrackingMode(.follow, animated: true)
+            })
+            .disposed(by: disposeBag)
+    }
 
-        let annotations = Observable<[MKAnnotation]>.just([chicagoAnnotation])
+    private func bindEvents(to viewModel: MapViewModelProtocol) {
 
-        annotations.asDriver(onErrorJustReturn: [])
-            .drive(rootView.rx.annotations)
-            .disposed(by: self.disposeBag)
+    }
+
+    private func bindToState(from viewModel: MapViewModelProtocol) {
+        viewModel.state
+            .drive(onNext: { [unowned self] state in
+                self.configureView(for: state)
+            })
+            .disposed(by: disposeBag)
+    }
+
+    private func configureView(for state: MapViewState) {
+        switch state {
+        case .loading:
+            break
+        case .ready(let annotations):
+            self.annotationsRelay.accept(annotations)
+        }
     }
 }
