@@ -7,27 +7,19 @@
 //
 
 import XCTest
+@testable import CMFourSquareLayer
 
 class VenueTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testEncoding() {
+        let dictionary = encodeObject(Venue.self, object: Venue.mock)
+        XCTAssertEqual(dictionary["id"] as? String, Venue.mock.id)
+        XCTAssertEqual(dictionary["name"] as? String, Venue.mock.name)
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testDecoding() {
+        let response = decodeObject(Venue.self, jsonFileName: "venue")
+        XCTAssertNotNil(response)
     }
 
 }
