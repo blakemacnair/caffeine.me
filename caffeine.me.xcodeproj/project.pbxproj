@@ -29,6 +29,7 @@
 		88720A3F220BDF4C007B4A18 /* VenueMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A3E220BDF4C007B4A18 /* VenueMock.swift */; };
 		88720A41220BDF5A007B4A18 /* VenueSearchResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A40220BDF5A007B4A18 /* VenueSearchResponseMock.swift */; };
 		88720A43220BF070007B4A18 /* CMFourSquareURLGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A42220BF070007B4A18 /* CMFourSquareURLGenerator.swift */; };
+		88720A45220BF320007B4A18 /* CMFourSquareURLGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A44220BF320007B4A18 /* CMFourSquareURLGeneratorTests.swift */; };
 		88CF11222203FF3B00032236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF11212203FF3B00032236 /* AppDelegate.swift */; };
 		88CF11292203FF3D00032236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CF11282203FF3D00032236 /* Assets.xcassets */; };
 		88CF112C2203FF3D00032236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CF112A2203FF3D00032236 /* LaunchScreen.storyboard */; };
@@ -140,6 +141,7 @@
 		88720A3E220BDF4C007B4A18 /* VenueMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueMock.swift; sourceTree = "<group>"; };
 		88720A40220BDF5A007B4A18 /* VenueSearchResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueSearchResponseMock.swift; sourceTree = "<group>"; };
 		88720A42220BF070007B4A18 /* CMFourSquareURLGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMFourSquareURLGenerator.swift; sourceTree = "<group>"; };
+		88720A44220BF320007B4A18 /* CMFourSquareURLGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMFourSquareURLGeneratorTests.swift; sourceTree = "<group>"; };
 		88CF111E2203FF3B00032236 /* caffeine.me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caffeine.me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CF11212203FF3B00032236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88CF11282203FF3D00032236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				88720A3B220BD278007B4A18 /* CodableModelTests.swift */,
 				88720A32220BCFE7007B4A18 /* Models */,
 				88720A2B220BCEE0007B4A18 /* Info.plist */,
+				88720A44220BF320007B4A18 /* CMFourSquareURLGeneratorTests.swift */,
 			);
 			path = CMFourSquareLayerTests;
 			sourceTree = "<group>";
@@ -700,6 +703,7 @@
 			files = (
 				88720A35220BD035007B4A18 /* VenueSearchResponseTests.swift in Sources */,
 				88720A3C220BD278007B4A18 /* CodableModelTests.swift in Sources */,
+				88720A45220BF320007B4A18 /* CMFourSquareURLGeneratorTests.swift in Sources */,
 				88720A38220BD05D007B4A18 /* VenueTests.swift in Sources */,
 				88720A3F220BDF4C007B4A18 /* VenueMock.swift in Sources */,
 				88720A41220BDF5A007B4A18 /* VenueSearchResponseMock.swift in Sources */,

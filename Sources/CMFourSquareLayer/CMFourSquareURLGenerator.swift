@@ -20,7 +20,7 @@ private extension URL {
 public final class CMFourSquareURLGenerator {
     static let baseURLString = "https://api.foursquare.com/v2"
 
-    static func venueSearchEndpoint(parameters: [String: String]) -> URL {
+    static func venueSearchEndpoint(parameters: [String: String] = [:]) -> URL {
         var url = URL(baseUrl: baseURLString, parameters: parameters)!
         url.appendPathComponent(.venues)
         url.appendPathComponent(.search)
