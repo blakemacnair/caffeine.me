@@ -1,0 +1,43 @@
+{
+    "id": "4b9d4df0f964a520fba136e3",
+    "name": "Morgenthal Frederics",
+    "location": {
+        "address": "399 W Broadway",
+        "crossStreet": "Spring St.",
+        "lat": 40.72453171100641,
+        "lng": -74.00195928292104,
+        "labeledLatLngs": [
+            {
+                "label": "display",
+                "lat": 40.72453171100641,
+                "lng": -74.00195928292104
+            }
+        ],
+        "distance": 29,
+        "postalCode": "10012",
+        "cc": "US",
+        "city": "New York",
+        "state": "NY",
+        "country": "United States",
+        "formattedAddress": [
+            "399 W Broadway (Spring St.)",
+            "New York, NY 10012",
+            "United States"
+        ]
+    },
+    "categories": [
+        {
+            "id": "4d954afda243a5684865b473",
+            "name": "Optical Shop",
+            "pluralName": "Optical Shops",
+            "shortName": "Optical",
+            "icon": {
+                "prefix": "https://ss3.4sqi.net/img/categories_v2/building/medical_opticalshop_",
+                "suffix": ".png"
+            },
+            "primary": true
+        }
+    ],
+    "referralId": "v-1549503945",
+    "hasPerk": false
+}
