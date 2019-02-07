@@ -11,10 +11,14 @@ import RxCocoa
 import RxMKMapView
 import MapKit
 
+import CMFourSquareLayer
+
 final class MapCoordinator: BaseCoordinator<Void> {
 
     private let navigationController: UINavigationController
     private let viewController: MapViewController
+
+    private let relay = CMFourSquareRelay()
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController

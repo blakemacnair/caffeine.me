@@ -23,6 +23,7 @@ public final class CMFourSquareRelay {
 
     public init() {
         self.client = HttpClient()
+        testCall()
     }
 
     private func testCall() {
