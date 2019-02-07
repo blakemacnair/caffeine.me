@@ -9,12 +9,23 @@
 import RxSwift
 import RxCocoa
 import RxHttpClient
+import class CoreLocation.CLLocation
 
-public protocol CMFourSquareRelayProtocol {
-    var coffeeShopsWithinRadius: Observable<Any> { get }
+public enum CMFourSquareRelayError: Equatable, Error {
+    case couldNotDecodeResponse
+    case invalidResponse
+    case clientSideError
+    case unknown
 }
 
-public final class CMFourSquareRelay {
+public protocol CMFourSquareRelayProtocol {
+    func coffeeShopsNear(location: CLLocation, limit: Int, radius: Int) -> Observable<[Venue]>
+}
+
+public final class CMFourSquareRelay: CMFourSquareRelayProtocol {
+
+    // MARK: - Properties
+
     private let client: HttpClient
     private let disposeBag = DisposeBag()
 
@@ -22,42 +33,68 @@ public final class CMFourSquareRelay {
     private let clientSecret = "1B2NPOFD5BBVCYHYZEZNSXUMZRCZBLX002SOU5XHTY10KEMZ"
     private let version = "20180901"
 
+    // MARK: - Init
+
     public init() {
         self.client = HttpClient()
-        testCall()
     }
 
-    private func testCall() {
+    // MARK: - Public
+
+    public func coffeeShopsNear(location: CLLocation,
+                                limit: Int = 50,
+                                radius: Int = 1000) -> Observable<[Venue]> {
+        let params = generateSearchParameters(location: location,
+                                              limit: limit,
+                                              radius: radius,
+                                              categoryID: Category.CoffeeShop.id)
+
         let baseURLString = "https://api.foursquare.com/v2"
         let endpoint = "venues/search"
+        var url = URL(baseUrl: baseURLString, parameters: params)!
+        url.appendPathComponent(endpoint)
+        return client.requestData(url: url)
+            .decode(VenueSearchResponse.self)
+            .map { $0.response.venues }
+            .catchError({ error in
+                switch error {
+                case HttpClientError.clientSideError(_): return .error(CMFourSquareRelayError.clientSideError)
+                case HttpClientError.invalidResponse(_, _): return .error(CMFourSquareRelayError.invalidResponse)
+                default: return .error(CMFourSquareRelayError.unknown)
+                }
+            })
+    }
+
+    // MARK: - Private
+
+    private func generateSearchParameters(location: CLLocation,
+                                          limit: Int,
+                                          radius: Int,
+                                          categoryID: String) -> [String: String] {
         let params: [String: String] = [
             "client_id": clientID,
             "client_secret": clientSecret,
             "v": version,
-            "ll": "40.7243,-74.0018",
+            "ll": "\(location.coordinate.latitude),\(location.coordinate.longitude)",
             "intent": "browse",
-            "radius": "1000",
-            "categoryId": Category.CoffeeShop.id
+            "limit": "\(limit)",
+            "radius": "\(radius)",
+            "categoryId": categoryID
         ]
+        return params
+    }
+}
 
-        var url = URL(baseUrl: baseURLString, parameters: params)!
-        url.appendPathComponent(endpoint)
-        client.requestData(url: url)
-            .subscribe(onNext: { data in
-                /* do something with returned data */
-                do {
-                    let response = try JSONDecoder().decode(VenueSearchResponse.self, from: data)
-                    print(response)
-                } catch {
-                    assertionFailure("Error deciding VenueSearchResponse: \(error.localizedDescription)")
-                }
-            }, onError: { error in
-                switch error {
-                case HttpClientError.clientSideError(_): break
-                case HttpClientError.invalidResponse(_, _): break
-                default: break
-                }
-            })
-            .disposed(by: disposeBag)
+private extension Observable where E == Data {
+    func decode<T>(_ class: T.Type) -> Observable<T> where T: Codable {
+        return self.flatMap { data -> Observable<T> in
+            do {
+                let response = try JSONDecoder().decode(T.self, from: data)
+                return .just(response)
+            } catch {
+                assertionFailure("Error decoding response: \(error.localizedDescription)")
+                return .error(CMFourSquareRelayError.couldNotDecodeResponse)
+            }
+        }
     }
 }
