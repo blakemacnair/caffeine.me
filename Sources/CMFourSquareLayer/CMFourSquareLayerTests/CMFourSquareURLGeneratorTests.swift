@@ -16,4 +16,17 @@ class CMFourSquareURLGeneratorTests: XCTestCase {
         let actualURL = CMFourSquareURLGenerator.venueSearchEndpoint()
         XCTAssertEqual(expectedURL, actualURL)
     }
+
+    func testGenerateVenueSearchURLWithParams() {
+        let expectedURLString = "https://api.foursquare.com/v2/venues/search"
+        let parameters = ["client_id": "123",
+                          "client_secret": "123"]
+        var components = URLComponents(string: expectedURLString)
+        components?.queryItems = parameters.map {
+            return URLQueryItem(name: $0.key, value: $0.value)
+        }
+
+        let actualURL = CMFourSquareURLGenerator.venueSearchEndpoint(parameters: parameters)
+        XCTAssertEqual(components?.url, actualURL)
+    }
 }

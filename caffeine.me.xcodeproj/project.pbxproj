@@ -30,6 +30,8 @@
 		88720A41220BDF5A007B4A18 /* VenueSearchResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A40220BDF5A007B4A18 /* VenueSearchResponseMock.swift */; };
 		88720A43220BF070007B4A18 /* CMFourSquareURLGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A42220BF070007B4A18 /* CMFourSquareURLGenerator.swift */; };
 		88720A45220BF320007B4A18 /* CMFourSquareURLGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A44220BF320007B4A18 /* CMFourSquareURLGeneratorTests.swift */; };
+		88720A47220BF555007B4A18 /* RxHttpClient.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 887209EC2209445A007B4A18 /* RxHttpClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88720A48220BF5A2007B4A18 /* RxHttpClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EC2209445A007B4A18 /* RxHttpClient.framework */; };
 		88CF11222203FF3B00032236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF11212203FF3B00032236 /* AppDelegate.swift */; };
 		88CF11292203FF3D00032236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CF11282203FF3D00032236 /* Assets.xcassets */; };
 		88CF112C2203FF3D00032236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CF112A2203FF3D00032236 /* LaunchScreen.storyboard */; };
@@ -98,6 +100,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		88720A46220BF548007B4A18 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				88720A47220BF555007B4A18 /* RxHttpClient.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88CF117622040DAA00032236 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88720A2C220BCEE0007B4A18 /* CMFourSquareLayer.framework in Frameworks */,
+				88720A48220BF5A2007B4A18 /* RxHttpClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +442,7 @@
 				88720A23220BCEE0007B4A18 /* Sources */,
 				88720A24220BCEE0007B4A18 /* Frameworks */,
 				88720A25220BCEE0007B4A18 /* Resources */,
+				88720A46220BF548007B4A18 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -794,6 +808,10 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sources/CMFourSquareLayer/CMFourSquareLayerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -813,6 +831,10 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sources/CMFourSquareLayer/CMFourSquareLayerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
