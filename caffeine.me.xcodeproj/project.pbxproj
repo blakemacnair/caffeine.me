@@ -21,6 +21,8 @@
 		88720A1D220BCB97007B4A18 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A1C220BCB97007B4A18 /* Category.swift */; };
 		88720A20220BCDB7007B4A18 /* VenueSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A1F220BCDB7007B4A18 /* VenueSearchResponse.swift */; };
 		88720A22220BCDDB007B4A18 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A21220BCDDB007B4A18 /* Meta.swift */; };
+		88720A2A220BCEE0007B4A18 /* CMFourSquareLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A29220BCEE0007B4A18 /* CMFourSquareLayerTests.swift */; };
+		88720A2C220BCEE0007B4A18 /* CMFourSquareLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF11452204059500032236 /* CMFourSquareLayer.framework */; };
 		88CF11222203FF3B00032236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF11212203FF3B00032236 /* AppDelegate.swift */; };
 		88CF11292203FF3D00032236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CF11282203FF3D00032236 /* Assets.xcassets */; };
 		88CF112C2203FF3D00032236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CF112A2203FF3D00032236 /* LaunchScreen.storyboard */; };
@@ -58,6 +60,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		88720A2D220BCEE0007B4A18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88CF11162203FF3B00032236 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88CF11442204059500032236;
+			remoteInfo = CMFourSquareLayer;
+		};
 		88CF117222040D5A00032236 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 88CF11162203FF3B00032236 /* Project object */;
@@ -116,6 +125,9 @@
 		88720A1C220BCB97007B4A18 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		88720A1F220BCDB7007B4A18 /* VenueSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueSearchResponse.swift; sourceTree = "<group>"; };
 		88720A21220BCDDB007B4A18 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		88720A27220BCEE0007B4A18 /* CMFourSquareLayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CMFourSquareLayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88720A29220BCEE0007B4A18 /* CMFourSquareLayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMFourSquareLayerTests.swift; sourceTree = "<group>"; };
+		88720A2B220BCEE0007B4A18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88CF111E2203FF3B00032236 /* caffeine.me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caffeine.me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CF11212203FF3B00032236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88CF11282203FF3D00032236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -139,6 +151,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		88720A24220BCEE0007B4A18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88720A2C220BCEE0007B4A18 /* CMFourSquareLayer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88CF111B2203FF3B00032236 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,6 +243,15 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		88720A28220BCEE0007B4A18 /* CMFourSquareLayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				88720A29220BCEE0007B4A18 /* CMFourSquareLayerTests.swift */,
+				88720A2B220BCEE0007B4A18 /* Info.plist */,
+			);
+			path = CMFourSquareLayerTests;
+			sourceTree = "<group>";
+		};
 		88CF11152203FF3B00032236 = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +271,7 @@
 				88CF11382204056000032236 /* CMViewLayer.framework */,
 				88CF11452204059500032236 /* CMFourSquareLayer.framework */,
 				88CF1152220405B000032236 /* CMLocationLayer.framework */,
+				88720A27220BCEE0007B4A18 /* CMFourSquareLayerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -272,6 +302,7 @@
 		88CF11462204059500032236 /* CMFourSquareLayer */ = {
 			isa = PBXGroup;
 			children = (
+				88720A28220BCEE0007B4A18 /* CMFourSquareLayerTests */,
 				88720A19220BC258007B4A18 /* Models */,
 				88CF11472204059500032236 /* CMFourSquareLayer.h */,
 				88CF11482204059500032236 /* Info.plist */,
@@ -346,6 +377,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		88720A26220BCEE0007B4A18 /* CMFourSquareLayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88720A2F220BCEE0007B4A18 /* Build configuration list for PBXNativeTarget "CMFourSquareLayerTests" */;
+			buildPhases = (
+				88720A23220BCEE0007B4A18 /* Sources */,
+				88720A24220BCEE0007B4A18 /* Frameworks */,
+				88720A25220BCEE0007B4A18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88720A2E220BCEE0007B4A18 /* PBXTargetDependency */,
+			);
+			name = CMFourSquareLayerTests;
+			productName = CMFourSquareLayerTests;
+			productReference = 88720A27220BCEE0007B4A18 /* CMFourSquareLayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		88CF111D2203FF3B00032236 /* caffeine.me */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88CF11302203FF3D00032236 /* Build configuration list for PBXNativeTarget "caffeine.me" */;
@@ -434,6 +483,9 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Blake Macnair";
 				TargetAttributes = {
+					88720A26220BCEE0007B4A18 = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					88CF111D2203FF3B00032236 = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
@@ -472,12 +524,20 @@
 				88CF111D2203FF3B00032236 /* caffeine.me */,
 				88CF11372204056000032236 /* CMViewLayer */,
 				88CF11442204059500032236 /* CMFourSquareLayer */,
+				88720A26220BCEE0007B4A18 /* CMFourSquareLayerTests */,
 				88CF1151220405B000032236 /* CMLocationLayer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		88720A25220BCEE0007B4A18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88CF111C2203FF3B00032236 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -590,6 +650,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		88720A23220BCEE0007B4A18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88720A2A220BCEE0007B4A18 /* CMFourSquareLayerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88CF111A2203FF3B00032236 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -634,6 +702,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		88720A2E220BCEE0007B4A18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88CF11442204059500032236 /* CMFourSquareLayer */;
+			targetProxy = 88720A2D220BCEE0007B4A18 /* PBXContainerItemProxy */;
+		};
 		88CF117322040D5A00032236 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 88CF11372204056000032236 /* CMViewLayer */;
@@ -663,6 +736,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		88720A30220BCEE0007B4A18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Sources/CMFourSquareLayer/CMFourSquareLayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = macnair.CMFourSquareLayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		88720A31220BCEE0007B4A18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Sources/CMFourSquareLayer/CMFourSquareLayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = macnair.CMFourSquareLayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		88CF112E2203FF3D00032236 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1021,6 +1128,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		88720A2F220BCEE0007B4A18 /* Build configuration list for PBXNativeTarget "CMFourSquareLayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88720A30220BCEE0007B4A18 /* Debug */,
+				88720A31220BCEE0007B4A18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		88CF11192203FF3B00032236 /* Build configuration list for PBXProject "caffeine.me" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
