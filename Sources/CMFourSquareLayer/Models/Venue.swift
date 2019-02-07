@@ -12,14 +12,6 @@ public struct Location: Equatable & Codable {
     public let lng: Double
 }
 
-public struct Category: Equatable & Codable {
-    internal let id: String
-    public let name: String
-    public let pluralName: String
-    public let shortName: String
-    public let primary: Bool
-}
-
 public struct Venue: Equatable & Codable {
     internal let id: String
     public let name: String
