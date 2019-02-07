@@ -13,7 +13,7 @@ extension Meta {
 }
 
 extension VenueResponse {
-    static let mock = VenueResponse(venues: [.mock], confident: true)
+    static let mock = VenueResponse(venues: [.mock])
 }
 
 extension VenueSearchResponse {

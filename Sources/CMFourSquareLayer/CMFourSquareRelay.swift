@@ -29,22 +29,28 @@ public final class CMFourSquareRelay {
 
     private func testCall() {
         let baseURLString = "https://api.foursquare.com/v2"
-        let endpoint = "venues/explore"
+        let endpoint = "venues/search"
         let params: [String: String] = [
             "client_id": clientID,
             "client_secret": clientSecret,
             "v": version,
             "ll": "40.7243,-74.0018",
-            "query": "coffee",
-            "limit": "1"
+            "intent": "browse",
+            "radius": "1000",
+            "categoryId": Category.CoffeeShop.id
         ]
 
         var url = URL(baseUrl: baseURLString, parameters: params)!
         url.appendPathComponent(endpoint)
-        client.requestJson(url: url)
-            .subscribe(onNext: { json in
+        client.requestData(url: url)
+            .subscribe(onNext: { data in
                 /* do something with returned data */
-                print(json)
+                do {
+                    let response = try JSONDecoder().decode(VenueSearchResponse.self, from: data)
+                    print(response)
+                } catch {
+                    assertionFailure("Error deciding VenueSearchResponse: \(error.localizedDescription)")
+                }
             }, onError: { error in
                 switch error {
                 case HttpClientError.clientSideError(_): break

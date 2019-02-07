@@ -8,7 +8,6 @@
 
 public struct VenueResponse: Equatable & Codable {
     public let venues: [Venue]
-    public let confident: Bool
 }
 
 public struct VenueSearchResponse: Equatable & Codable {
