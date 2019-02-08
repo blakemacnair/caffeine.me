@@ -21,6 +21,23 @@ final class VenueDetailCoordinator: BaseCoordinator<Void> {
     }
 
     override func start() -> Signal<Void> {
-        return Signal.never()
+        bindRelays()
+
+        let dismissEvent = viewModel.coordinatorRequests
+            .filter { $0 == .dismissView }
+            .map { _ in return () }
+            .asObservable()
+
+        return Observable<Void>.never().takeUntil(dismissEvent).asSignal(onErrorJustReturn: ())
+    }
+
+    func bindRelays() {
+        viewController.uiEvents
+            .bind(to: viewModel.actions)
+            .disposed(by: disposeBag)
+
+        viewModel.state
+            .drive(viewController.state)
+            .disposed(by: disposeBag)
     }
 }
