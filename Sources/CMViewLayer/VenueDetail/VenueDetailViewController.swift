@@ -69,7 +69,6 @@ final class VenueDetailView: UIView {
 
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
 
         label.text = "VENUE"
         label.font = .preferredFont(forTextStyle: .title2)
@@ -79,9 +78,8 @@ final class VenueDetailView: UIView {
         return label
     }()
 
-    let subtitleLabel: UILabel = {
+    let subtitleLabel: UILabel = { // TODO: ADD ME PLEASE
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
 
         label.text = "ADDRESS"
         label.font = .preferredFont(forTextStyle: .body)
@@ -94,7 +92,7 @@ final class VenueDetailView: UIView {
     // MARK: - Public
 
     convenience init() {
-        self.init(frame: .zero)
+        self.init(frame: UIScreen.main.bounds)
         setup()
     }
 
@@ -109,7 +107,7 @@ final class VenueDetailView: UIView {
 
     private func activateInitialConstraints() {
         titleLabel.snp.makeConstraints { mk in
-            mk.top.left.right.equalTo(self).inset(8)
+            mk.top.left.right.equalTo(self.readableContentGuide).inset(8)
         }
     }
 }
