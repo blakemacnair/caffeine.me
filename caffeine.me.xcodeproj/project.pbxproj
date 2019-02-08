@@ -39,6 +39,10 @@
 		88720A54220D4E04007B4A18 /* VenueDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A53220D4E04007B4A18 /* VenueDetailInteractor.swift */; };
 		88720A56220D4E0E007B4A18 /* VenueDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A55220D4E0E007B4A18 /* VenueDetailViewModel.swift */; };
 		88720A58220D4FAC007B4A18 /* VenueDetailViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A57220D4FAC007B4A18 /* VenueDetailViewState.swift */; };
+		88720A59220DB11E007B4A18 /* RxHttpClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EC2209445A007B4A18 /* RxHttpClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88720A5F220DB232007B4A18 /* Differentiator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 88720A5E220DB21D007B4A18 /* Differentiator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88720A60220DB237007B4A18 /* RxCoreLocation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EA2209443C007B4A18 /* RxCoreLocation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88720A61220DB24E007B4A18 /* RxMKMapView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EE220944B5007B4A18 /* RxMKMapView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		88CF11222203FF3B00032236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF11212203FF3B00032236 /* AppDelegate.swift */; };
 		88CF11292203FF3D00032236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CF11282203FF3D00032236 /* Assets.xcassets */; };
 		88CF112C2203FF3D00032236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CF112A2203FF3D00032236 /* LaunchScreen.storyboard */; };
@@ -123,6 +127,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				88720A61220DB24E007B4A18 /* RxMKMapView.framework in Embed Frameworks */,
+				88720A60220DB237007B4A18 /* RxCoreLocation.framework in Embed Frameworks */,
+				88720A5F220DB232007B4A18 /* Differentiator.framework in Embed Frameworks */,
 				88CF118022040DBC00032236 /* RxCocoa.framework in Embed Frameworks */,
 				88CF117522040DAA00032236 /* CMViewLayer.framework in Embed Frameworks */,
 				88CF118422040DBC00032236 /* RxSwift.framework in Embed Frameworks */,
@@ -130,6 +137,7 @@
 				88CF118222040DBC00032236 /* RxDataSources.framework in Embed Frameworks */,
 				88CF117822040DBC00032236 /* CMFourSquareLayer.framework in Embed Frameworks */,
 				88CF117C22040DBC00032236 /* CMLocationLayer.framework in Embed Frameworks */,
+				88720A59220DB11E007B4A18 /* RxHttpClient.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,6 +176,7 @@
 		88720A53220D4E04007B4A18 /* VenueDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailInteractor.swift; sourceTree = "<group>"; };
 		88720A55220D4E0E007B4A18 /* VenueDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailViewModel.swift; sourceTree = "<group>"; };
 		88720A57220D4FAC007B4A18 /* VenueDetailViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailViewState.swift; sourceTree = "<group>"; };
+		88720A5E220DB21D007B4A18 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		88CF111E2203FF3B00032236 /* caffeine.me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caffeine.me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CF11212203FF3B00032236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88CF11282203FF3D00032236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -421,6 +430,7 @@
 		88CF115A220406B500032236 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				88720A5E220DB21D007B4A18 /* Differentiator.framework */,
 				887209F5220955CB007B4A18 /* MapKit.framework */,
 				887209EE220944B5007B4A18 /* RxMKMapView.framework */,
 				887209EC2209445A007B4A18 /* RxHttpClient.framework */,
@@ -1014,6 +1024,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PCSX5KABFK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1036,6 +1047,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PCSX5KABFK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
