@@ -76,7 +76,9 @@ final class MapCoordinator: BaseCoordinator<Void> {
     private func displayVenueDetails(for venue: Venue) {
         let detailCoord = VenueDetailCoordinator(venue: venue,
                                                  presentingViewController: self.navigationController)
-        _ = addChild(detailCoord)
+        addChild(detailCoord).asObservable()
+            .subscribe()
+            .disposed(by: disposeBag)
     }
 }
 

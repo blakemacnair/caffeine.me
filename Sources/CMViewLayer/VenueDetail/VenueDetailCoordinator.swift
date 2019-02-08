@@ -25,16 +25,20 @@ final class VenueDetailCoordinator: BaseCoordinator<Void> {
     override func start() -> Signal<Void> {
         bindRelays()
 
+        let wrapperNavController = UINavigationController(rootViewController: viewController)
+
         let dismissEvent = viewModel.coordinatorRequests
             .filter { $0 == .dismissView }
             .map { _ in return () }
+            .do(onNext: { _ in
+                wrapperNavController.dismiss(animated: true)
+            })
             .asObservable()
-
-        let wrapperNavController = UINavigationController(rootViewController: viewController)
+            .take(1)
 
         presentingViewController.present(wrapperNavController, animated: true)
 
-        return Observable<Void>.never().takeUntil(dismissEvent).asSignal(onErrorJustReturn: ())
+        return dismissEvent.asSignal(onErrorJustReturn: ())
     }
 
     func bindRelays() {

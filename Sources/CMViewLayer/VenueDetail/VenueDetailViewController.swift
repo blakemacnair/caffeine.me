@@ -36,6 +36,7 @@ final class VenueDetailViewController: UIViewController, VenueDetailViewControll
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindEvents()
 
         navigationItem.leftBarButtonItem = rootView.dismissItem
 
