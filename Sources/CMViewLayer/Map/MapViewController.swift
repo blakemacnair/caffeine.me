@@ -13,6 +13,7 @@ import class MapKit.MKMapView
 import protocol MapKit.MKAnnotation
 import struct MapKit.MKCoordinateRegion
 import struct CoreLocation.CLLocationCoordinate2D
+import class CoreLocation.CLLocation
 import RxMKMapView
 
 import struct CMFourSquareLayer.Venue
@@ -28,7 +29,7 @@ final class MapViewController: UIViewController & MapViewControllerProtocol {
 
     private let rootView = MKMapView()
 
-    private let annotationsRelay = BehaviorRelay<[MKAnnotation]>(value: [])
+    private let annotationsRelay = BehaviorRelay<[VenueAnnotation]>(value: [])
     private let disposeBag = DisposeBag()
 
     convenience init() {
@@ -36,6 +37,14 @@ final class MapViewController: UIViewController & MapViewControllerProtocol {
 
         annotationsRelay
             .asDriver()
+            .distinctUntilChanged { lhs, rhs in
+                let llocs = lhs.map { $0.venue.location }
+                let rlocs = rhs.map { $0.venue.location }
+                for lloc in llocs {
+                    if !rlocs.contains(lloc) { return true }
+                }
+                return false
+            }
             .drive(rootView.rx.annotations)
             .disposed(by: disposeBag)
 
@@ -57,7 +66,7 @@ final class MapViewController: UIViewController & MapViewControllerProtocol {
         rootView.setUserTrackingMode(.follow, animated: true)
         rootView.rx.didUpdateUserLocation
             .subscribe(onNext: { userloc in
-                self.rootView.setUserTrackingMode(.follow, animated: true)
+                self.rootView.setUserTrackingMode(.none, animated: true)
             })
             .disposed(by: disposeBag)
     }
@@ -94,7 +103,8 @@ final class MapViewController: UIViewController & MapViewControllerProtocol {
             self.annotationsRelay.accept(annotations)
 
             if let userPlacemark = userPlacemark, let location = userPlacemark.location {
-                let region = generateRegion(from: location.coordinate)
+                let coords = annotations.map { $0.coordinate } + [location.coordinate]
+                let region = generateRegion(from: coords)
                 self.rootView.setRegion(region, animated: true)
             }
         }
@@ -104,5 +114,45 @@ final class MapViewController: UIViewController & MapViewControllerProtocol {
         return MKCoordinateRegion(center: coord,
                                   latitudinalMeters: 1000,
                                   longitudinalMeters: 1000)
+    }
+
+    private func generateRegion(from coordinates: [CLLocationCoordinate2D]) -> MKCoordinateRegion {
+        var avgCoord = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+        var minCoord: CLLocationCoordinate2D?
+        var maxCoord: CLLocationCoordinate2D?
+        for coordinate in coordinates {
+            if minCoord != nil {
+                minCoord!.latitude = min(minCoord!.latitude, coordinate.latitude)
+                minCoord!.longitude = min(minCoord!.longitude, coordinate.longitude)
+            } else {
+                minCoord = coordinate
+            }
+            if maxCoord != nil {
+                maxCoord!.latitude = max(maxCoord!.latitude, coordinate.latitude)
+                maxCoord!.longitude = max(maxCoord!.longitude, coordinate.longitude)
+            } else {
+                maxCoord = coordinate
+            }
+        }
+
+        avgCoord = CLLocationCoordinate2D(latitude: (minCoord!.latitude + maxCoord!.latitude)/2.0,
+                                          longitude: (minCoord!.longitude + maxCoord!.longitude)/2.0)
+
+        let xSpan: Double = {
+            let minX = CLLocation(latitude: minCoord!.latitude, longitude: maxCoord!.longitude)
+            let maxX = CLLocation(latitude: maxCoord!.latitude, longitude: maxCoord!.longitude)
+            return minX.distance(from: maxX)
+        }()
+
+        let ySpan: Double = {
+            let minY = CLLocation(latitude: minCoord!.latitude, longitude: minCoord!.longitude)
+            let maxY = CLLocation(latitude: minCoord!.latitude, longitude: maxCoord!.longitude)
+            return minY.distance(from: maxY)
+        }()
+
+        let padding: Double = 200
+
+        return MKCoordinateRegion(center: avgCoord, latitudinalMeters: xSpan + padding,
+                                  longitudinalMeters: ySpan + padding)
     }
 }

@@ -13,6 +13,8 @@ import CMLocationLayer
 import CMFourSquareLayer
 
 import class CoreLocation.CLPlacemark
+import class CoreLocation.CLLocation
+import typealias CoreLocation.CLLocationDistance
 import enum CoreLocation.CLAuthorizationStatus
 
 enum MapInteractorState: Equatable {
@@ -35,6 +37,8 @@ final class MapInteractor: MapInteractorProtocol {
     }
     private let stateRelay = BehaviorRelay<MapInteractorState>(value: .loading)
 
+    private let distanceFilter: CLLocationDistance = 100
+
     private let venuesRelay = BehaviorRelay<[Venue]>(value: [])
 
     private let locationRelay: CMLocationRelayProtocol
@@ -47,7 +51,24 @@ final class MapInteractor: MapInteractorProtocol {
         self.locationRelay = locationRelay
         self.fourSquareRelay = fourSquareRelay
 
-        Observable.combineLatest(locationRelay.placemark, venuesRelay.asObservable())
+        let seed: CLLocation? = CLLocation(latitude: 0, longitude: 0)
+
+        let placemarkSignificantChange = locationRelay.placemark.map { $0.location }
+            .scan(seed,
+                  accumulator: { [distanceFilter] seed, newValue -> CLLocation? in
+                    guard let seed = seed, let newLocation = newValue else { return newValue }
+                    let shouldUpdate = newLocation.distance(from: seed) > distanceFilter
+                    return shouldUpdate ? newValue : seed
+            })
+            .distinctUntilChanged()
+            .do(onNext: { [unowned self] _ in
+                self.refreshVenues()
+            })
+            .withLatestFrom(locationRelay.placemark)
+
+
+        Observable.combineLatest(placemarkSignificantChange,
+                                 venuesRelay.asObservable())
             .map { (arg) -> MapInteractorState in
                 let (placemark, venues) = arg
                 let annotations = venues.compactMap { VenueAnnotation($0) }
@@ -74,10 +95,11 @@ final class MapInteractor: MapInteractorProtocol {
         locationRelay.placemark
             .filter { $0.location != nil }
             .map { $0.location! }
+            .take(1)
             .flatMapLatest { [unowned self] location -> Observable<[Venue]> in
                 return self.fourSquareRelay.coffeeShopsNear(location: location,
                                                             limit: 10,
-                                                            radius: 500)
+                                                            radius: 1000)
             }
             .bind(to: self.venuesRelay)
             .disposed(by: disposeBag)
