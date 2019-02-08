@@ -66,7 +66,7 @@ final class MapViewController: UIViewController {
         switch state {
         case .loading:
             break
-        case .ready(let annotations):
+        case .ready(let annotations, _):
             self.annotationsRelay.accept(annotations)
         }
     }

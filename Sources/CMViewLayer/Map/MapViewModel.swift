@@ -16,22 +16,6 @@ enum MapViewError: Error, Equatable {
     case unknown
 }
 
-enum MapViewState {
-    case loading
-    case ready(annotations: [MKPointAnnotation], error: MapViewError?)
-
-    var annotations: [MKPointAnnotation] {
-        switch self {
-        case .loading: return []
-        case .ready(let annotations, _): return annotations
-        }
-    }
-}
-
-enum MapViewAction {
-    case locationServicesUpdated(userPlacemark: CLPlacemark, annotations: [MKPointAnnotation])
-}
-
 protocol MapViewModelProtocol {
     var actions: PublishRelay<MapViewAction> { get }
     var state: Driver<MapViewState> { get }

@@ -32,6 +32,7 @@
 		88720A45220BF320007B4A18 /* CMFourSquareURLGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A44220BF320007B4A18 /* CMFourSquareURLGeneratorTests.swift */; };
 		88720A47220BF555007B4A18 /* RxHttpClient.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 887209EC2209445A007B4A18 /* RxHttpClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		88720A48220BF5A2007B4A18 /* RxHttpClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EC2209445A007B4A18 /* RxHttpClient.framework */; };
+		88720A4A220D2F9F007B4A18 /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A49220D2F9F007B4A18 /* MapViewState.swift */; };
 		88CF11222203FF3B00032236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF11212203FF3B00032236 /* AppDelegate.swift */; };
 		88CF11292203FF3D00032236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CF11282203FF3D00032236 /* Assets.xcassets */; };
 		88CF112C2203FF3D00032236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CF112A2203FF3D00032236 /* LaunchScreen.storyboard */; };
@@ -154,6 +155,7 @@
 		88720A40220BDF5A007B4A18 /* VenueSearchResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueSearchResponseMock.swift; sourceTree = "<group>"; };
 		88720A42220BF070007B4A18 /* CMFourSquareURLGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMFourSquareURLGenerator.swift; sourceTree = "<group>"; };
 		88720A44220BF320007B4A18 /* CMFourSquareURLGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMFourSquareURLGeneratorTests.swift; sourceTree = "<group>"; };
+		88720A49220D2F9F007B4A18 /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
 		88CF111E2203FF3B00032236 /* caffeine.me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caffeine.me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CF11212203FF3B00032236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88CF11282203FF3D00032236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				88720A11220B717E007B4A18 /* MapCoordinator.swift */,
 				88720A13220B7188007B4A18 /* MapViewModel.swift */,
 				88720A15220B719D007B4A18 /* MapInteractor.swift */,
+				88720A49220D2F9F007B4A18 /* MapViewState.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -737,6 +740,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88CF116F2204090600032236 /* AppCoordinator.swift in Sources */,
+				88720A4A220D2F9F007B4A18 /* MapViewState.swift in Sources */,
 				88720A14220B7188007B4A18 /* MapViewModel.swift in Sources */,
 				88720A12220B717E007B4A18 /* MapCoordinator.swift in Sources */,
 				88720A16220B719D007B4A18 /* MapInteractor.swift in Sources */,
