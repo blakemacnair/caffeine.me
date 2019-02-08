@@ -46,10 +46,25 @@ final class MapCoordinator: BaseCoordinator<Void> {
     private func startServices() {
         // TODO: Remove this debug once we move interactor logic into view model
         interactor.state
-            .debug("STATE")
-            .subscribe()
+            .toViewAction()
+            .bind(to: viewModel.actions)
             .disposed(by: disposeBag)
+
         interactor.startLocationServies()
         interactor.refreshVenues()
+    }
+}
+
+extension ObservableType where E == MapInteractorState {
+    func toViewAction() -> Observable<MapViewAction> {
+        return self
+            .map { intState -> MapViewAction? in
+                guard case .ready(let userPlacemark, let annotations) = intState
+                    else { return nil }
+                return .locationServicesUpdated(userPlacemark: userPlacemark,
+                                                annotations: annotations)
+            }
+            .filter { $0 != nil }
+            .map { $0! }
     }
 }

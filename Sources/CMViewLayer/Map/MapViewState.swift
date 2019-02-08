@@ -9,6 +9,12 @@
 import class CoreLocation.CLPlacemark
 import class MapKit.MKPointAnnotation
 
+enum MapViewError: Error, Equatable {
+    case notAuthorized
+    case servicesNotAvailable
+    case unknown
+}
+
 enum MapViewState {
     case loading
     case ready(annotations: [MKPointAnnotation], error: MapViewError?)
