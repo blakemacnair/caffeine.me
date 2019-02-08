@@ -1,0 +1,22 @@
+identifier_name:
+  min_length: 1
+  excluded:
+    - Current
+type_name:
+  allowed_symbols: _
+vertical_whitespace:
+  max_empty_lines: 2
+
+disabled_rules:
+  - force_try
+  - force_cast
+
+excluded:
+  - Carthage
+  - Pods
+  - vendor
+  - KeeperViewLayer/Resources/Generated
+  - MyPlayground.playground
+  - Products
+  - GoogleSignIn
+  - swiftgen-6.0.2

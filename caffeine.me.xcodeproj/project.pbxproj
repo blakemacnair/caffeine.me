@@ -7,39 +7,362 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		887209EB2209443C007B4A18 /* RxCoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EA2209443C007B4A18 /* RxCoreLocation.framework */; };
+		887209ED2209445A007B4A18 /* RxHttpClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EC2209445A007B4A18 /* RxHttpClient.framework */; };
+		887209EF220944B5007B4A18 /* RxMKMapView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EE220944B5007B4A18 /* RxMKMapView.framework */; };
+		887209F122094550007B4A18 /* CMLocationRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887209F022094550007B4A18 /* CMLocationRelay.swift */; };
+		887209F6220955CB007B4A18 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887209F5220955CB007B4A18 /* MapKit.framework */; };
+		88720A10220B715F007B4A18 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A0F220B715F007B4A18 /* MapViewController.swift */; };
+		88720A12220B717E007B4A18 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A11220B717E007B4A18 /* MapCoordinator.swift */; };
+		88720A14220B7188007B4A18 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A13220B7188007B4A18 /* MapViewModel.swift */; };
+		88720A16220B719D007B4A18 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A15220B719D007B4A18 /* MapInteractor.swift */; };
+		88720A18220BBC49007B4A18 /* CMFourSquareRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A17220BBC49007B4A18 /* CMFourSquareRelay.swift */; };
+		88720A1B220BC5A3007B4A18 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A1A220BC5A3007B4A18 /* Venue.swift */; };
+		88720A1D220BCB97007B4A18 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A1C220BCB97007B4A18 /* Category.swift */; };
+		88720A20220BCDB7007B4A18 /* VenueSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A1F220BCDB7007B4A18 /* VenueSearchResponse.swift */; };
+		88720A22220BCDDB007B4A18 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A21220BCDDB007B4A18 /* Meta.swift */; };
+		88720A2C220BCEE0007B4A18 /* CMFourSquareLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF11452204059500032236 /* CMFourSquareLayer.framework */; };
+		88720A35220BD035007B4A18 /* VenueSearchResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A34220BD035007B4A18 /* VenueSearchResponseTests.swift */; };
+		88720A38220BD05D007B4A18 /* VenueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A37220BD05D007B4A18 /* VenueTests.swift */; };
+		88720A3A220BD137007B4A18 /* json.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 88720A39220BD137007B4A18 /* json.bundle */; };
+		88720A3C220BD278007B4A18 /* CodableModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A3B220BD278007B4A18 /* CodableModelTests.swift */; };
+		88720A3F220BDF4C007B4A18 /* VenueMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A3E220BDF4C007B4A18 /* VenueMock.swift */; };
+		88720A41220BDF5A007B4A18 /* VenueSearchResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A40220BDF5A007B4A18 /* VenueSearchResponseMock.swift */; };
+		88720A43220BF070007B4A18 /* CMFourSquareURLGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A42220BF070007B4A18 /* CMFourSquareURLGenerator.swift */; };
+		88720A45220BF320007B4A18 /* CMFourSquareURLGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A44220BF320007B4A18 /* CMFourSquareURLGeneratorTests.swift */; };
+		88720A47220BF555007B4A18 /* RxHttpClient.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 887209EC2209445A007B4A18 /* RxHttpClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88720A48220BF5A2007B4A18 /* RxHttpClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EC2209445A007B4A18 /* RxHttpClient.framework */; };
+		88720A4A220D2F9F007B4A18 /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A49220D2F9F007B4A18 /* MapViewState.swift */; };
+		88720A4D220D4B2B007B4A18 /* VenueAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A4C220D4B2B007B4A18 /* VenueAnnotation.swift */; };
+		88720A50220D4DF0007B4A18 /* VenueDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A4F220D4DF0007B4A18 /* VenueDetailCoordinator.swift */; };
+		88720A52220D4DFA007B4A18 /* VenueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A51220D4DFA007B4A18 /* VenueDetailViewController.swift */; };
+		88720A54220D4E04007B4A18 /* VenueDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A53220D4E04007B4A18 /* VenueDetailInteractor.swift */; };
+		88720A56220D4E0E007B4A18 /* VenueDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A55220D4E0E007B4A18 /* VenueDetailViewModel.swift */; };
+		88720A58220D4FAC007B4A18 /* VenueDetailViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A57220D4FAC007B4A18 /* VenueDetailViewState.swift */; };
+		88720A59220DB11E007B4A18 /* RxHttpClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EC2209445A007B4A18 /* RxHttpClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88720A5F220DB232007B4A18 /* Differentiator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 88720A5E220DB21D007B4A18 /* Differentiator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88720A60220DB237007B4A18 /* RxCoreLocation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EA2209443C007B4A18 /* RxCoreLocation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88720A61220DB24E007B4A18 /* RxMKMapView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EE220944B5007B4A18 /* RxMKMapView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		88CF11222203FF3B00032236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF11212203FF3B00032236 /* AppDelegate.swift */; };
-		88CF11242203FF3B00032236 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF11232203FF3B00032236 /* ViewController.swift */; };
-		88CF11272203FF3B00032236 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CF11252203FF3B00032236 /* Main.storyboard */; };
 		88CF11292203FF3D00032236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CF11282203FF3D00032236 /* Assets.xcassets */; };
 		88CF112C2203FF3D00032236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CF112A2203FF3D00032236 /* LaunchScreen.storyboard */; };
+		88CF113C2204056000032236 /* CMViewLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 88CF113A2204056000032236 /* CMViewLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88CF11492204059500032236 /* CMFourSquareLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 88CF11472204059500032236 /* CMFourSquareLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88CF1156220405B000032236 /* CMLocationLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 88CF1154220405B000032236 /* CMLocationLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88CF115F220406B600032236 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115B220406B500032236 /* RxCocoa.framework */; };
+		88CF1160220406B600032236 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115C220406B500032236 /* SnapKit.framework */; };
+		88CF1161220406B600032236 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115D220406B500032236 /* RxDataSources.framework */; };
+		88CF1162220406B600032236 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115E220406B600032236 /* RxSwift.framework */; };
+		88CF1163220406CE00032236 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115B220406B500032236 /* RxCocoa.framework */; };
+		88CF1164220406CE00032236 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115E220406B600032236 /* RxSwift.framework */; };
+		88CF1165220406DD00032236 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115B220406B500032236 /* RxCocoa.framework */; };
+		88CF1166220406DD00032236 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115E220406B600032236 /* RxSwift.framework */; };
+		88CF1167220406EF00032236 /* CMFourSquareLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF11452204059500032236 /* CMFourSquareLayer.framework */; };
+		88CF1168220406F600032236 /* CMFourSquareLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF11452204059500032236 /* CMFourSquareLayer.framework */; };
+		88CF1169220406F600032236 /* CMLocationLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF1152220405B000032236 /* CMLocationLayer.framework */; };
+		88CF116F2204090600032236 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF116D2204090600032236 /* AppCoordinator.swift */; };
+		88CF11702204090600032236 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF116E2204090600032236 /* BaseCoordinator.swift */; };
+		88CF117122040A0300032236 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115E220406B600032236 /* RxSwift.framework */; };
+		88CF117422040DAA00032236 /* CMViewLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF11382204056000032236 /* CMViewLayer.framework */; };
+		88CF117522040DAA00032236 /* CMViewLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF11382204056000032236 /* CMViewLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88CF117722040DBC00032236 /* CMFourSquareLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF11452204059500032236 /* CMFourSquareLayer.framework */; };
+		88CF117822040DBC00032236 /* CMFourSquareLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF11452204059500032236 /* CMFourSquareLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88CF117B22040DBC00032236 /* CMLocationLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF1152220405B000032236 /* CMLocationLayer.framework */; };
+		88CF117C22040DBC00032236 /* CMLocationLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF1152220405B000032236 /* CMLocationLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88CF117F22040DBC00032236 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115B220406B500032236 /* RxCocoa.framework */; };
+		88CF118022040DBC00032236 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115B220406B500032236 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88CF118122040DBC00032236 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115D220406B500032236 /* RxDataSources.framework */; };
+		88CF118222040DBC00032236 /* RxDataSources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115D220406B500032236 /* RxDataSources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88CF118322040DBC00032236 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115E220406B600032236 /* RxSwift.framework */; };
+		88CF118422040DBC00032236 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115E220406B600032236 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88CF118522040DBC00032236 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115C220406B500032236 /* SnapKit.framework */; };
+		88CF118622040DBC00032236 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 88CF115C220406B500032236 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		88720A2D220BCEE0007B4A18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88CF11162203FF3B00032236 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88CF11442204059500032236;
+			remoteInfo = CMFourSquareLayer;
+		};
+		88CF117222040D5A00032236 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88CF11162203FF3B00032236 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88CF11372204056000032236;
+			remoteInfo = CMViewLayer;
+		};
+		88CF117922040DBC00032236 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88CF11162203FF3B00032236 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88CF11442204059500032236;
+			remoteInfo = CMFourSquareLayer;
+		};
+		88CF117D22040DBC00032236 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88CF11162203FF3B00032236 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88CF1151220405B000032236;
+			remoteInfo = CMLocationLayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		88720A46220BF548007B4A18 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				88720A47220BF555007B4A18 /* RxHttpClient.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88CF117622040DAA00032236 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				88720A61220DB24E007B4A18 /* RxMKMapView.framework in Embed Frameworks */,
+				88720A60220DB237007B4A18 /* RxCoreLocation.framework in Embed Frameworks */,
+				88720A5F220DB232007B4A18 /* Differentiator.framework in Embed Frameworks */,
+				88CF118022040DBC00032236 /* RxCocoa.framework in Embed Frameworks */,
+				88CF117522040DAA00032236 /* CMViewLayer.framework in Embed Frameworks */,
+				88CF118422040DBC00032236 /* RxSwift.framework in Embed Frameworks */,
+				88CF118622040DBC00032236 /* SnapKit.framework in Embed Frameworks */,
+				88CF118222040DBC00032236 /* RxDataSources.framework in Embed Frameworks */,
+				88CF117822040DBC00032236 /* CMFourSquareLayer.framework in Embed Frameworks */,
+				88CF117C22040DBC00032236 /* CMLocationLayer.framework in Embed Frameworks */,
+				88720A59220DB11E007B4A18 /* RxHttpClient.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		887209EA2209443C007B4A18 /* RxCoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCoreLocation.framework; path = Carthage/Build/iOS/RxCoreLocation.framework; sourceTree = "<group>"; };
+		887209EC2209445A007B4A18 /* RxHttpClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxHttpClient.framework; path = Carthage/Build/iOS/RxHttpClient.framework; sourceTree = "<group>"; };
+		887209EE220944B5007B4A18 /* RxMKMapView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMKMapView.framework; path = Carthage/Build/iOS/RxMKMapView.framework; sourceTree = "<group>"; };
+		887209F022094550007B4A18 /* CMLocationRelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLocationRelay.swift; sourceTree = "<group>"; };
+		887209F5220955CB007B4A18 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		88720A0F220B715F007B4A18 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		88720A11220B717E007B4A18 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
+		88720A13220B7188007B4A18 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		88720A15220B719D007B4A18 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
+		88720A17220BBC49007B4A18 /* CMFourSquareRelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMFourSquareRelay.swift; sourceTree = "<group>"; };
+		88720A1A220BC5A3007B4A18 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		88720A1C220BCB97007B4A18 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		88720A1F220BCDB7007B4A18 /* VenueSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueSearchResponse.swift; sourceTree = "<group>"; };
+		88720A21220BCDDB007B4A18 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		88720A27220BCEE0007B4A18 /* CMFourSquareLayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CMFourSquareLayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88720A2B220BCEE0007B4A18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88720A34220BD035007B4A18 /* VenueSearchResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueSearchResponseTests.swift; sourceTree = "<group>"; };
+		88720A37220BD05D007B4A18 /* VenueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueTests.swift; sourceTree = "<group>"; };
+		88720A39220BD137007B4A18 /* json.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = json.bundle; sourceTree = "<group>"; };
+		88720A3B220BD278007B4A18 /* CodableModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableModelTests.swift; sourceTree = "<group>"; };
+		88720A3E220BDF4C007B4A18 /* VenueMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueMock.swift; sourceTree = "<group>"; };
+		88720A40220BDF5A007B4A18 /* VenueSearchResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueSearchResponseMock.swift; sourceTree = "<group>"; };
+		88720A42220BF070007B4A18 /* CMFourSquareURLGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMFourSquareURLGenerator.swift; sourceTree = "<group>"; };
+		88720A44220BF320007B4A18 /* CMFourSquareURLGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMFourSquareURLGeneratorTests.swift; sourceTree = "<group>"; };
+		88720A49220D2F9F007B4A18 /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
+		88720A4C220D4B2B007B4A18 /* VenueAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueAnnotation.swift; sourceTree = "<group>"; };
+		88720A4F220D4DF0007B4A18 /* VenueDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailCoordinator.swift; sourceTree = "<group>"; };
+		88720A51220D4DFA007B4A18 /* VenueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailViewController.swift; sourceTree = "<group>"; };
+		88720A53220D4E04007B4A18 /* VenueDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailInteractor.swift; sourceTree = "<group>"; };
+		88720A55220D4E0E007B4A18 /* VenueDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailViewModel.swift; sourceTree = "<group>"; };
+		88720A57220D4FAC007B4A18 /* VenueDetailViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailViewState.swift; sourceTree = "<group>"; };
+		88720A5E220DB21D007B4A18 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		88CF111E2203FF3B00032236 /* caffeine.me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caffeine.me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CF11212203FF3B00032236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		88CF11232203FF3B00032236 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		88CF11262203FF3B00032236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		88CF11282203FF3D00032236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88CF112B2203FF3D00032236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88CF112D2203FF3D00032236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88CF11382204056000032236 /* CMViewLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CMViewLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88CF113A2204056000032236 /* CMViewLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMViewLayer.h; sourceTree = "<group>"; };
+		88CF113B2204056000032236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88CF11452204059500032236 /* CMFourSquareLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CMFourSquareLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88CF11472204059500032236 /* CMFourSquareLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMFourSquareLayer.h; sourceTree = "<group>"; };
+		88CF11482204059500032236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88CF1152220405B000032236 /* CMLocationLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CMLocationLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88CF1154220405B000032236 /* CMLocationLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMLocationLayer.h; sourceTree = "<group>"; };
+		88CF1155220405B000032236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88CF115B220406B500032236 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		88CF115C220406B500032236 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		88CF115D220406B500032236 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
+		88CF115E220406B600032236 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		88CF116D2204090600032236 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		88CF116E2204090600032236 /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		88720A24220BCEE0007B4A18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88720A2C220BCEE0007B4A18 /* CMFourSquareLayer.framework in Frameworks */,
+				88720A48220BF5A2007B4A18 /* RxHttpClient.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88CF111B2203FF3B00032236 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88CF118522040DBC00032236 /* SnapKit.framework in Frameworks */,
+				88CF117F22040DBC00032236 /* RxCocoa.framework in Frameworks */,
+				887209F6220955CB007B4A18 /* MapKit.framework in Frameworks */,
+				88CF117122040A0300032236 /* RxSwift.framework in Frameworks */,
+				88CF117722040DBC00032236 /* CMFourSquareLayer.framework in Frameworks */,
+				88CF118122040DBC00032236 /* RxDataSources.framework in Frameworks */,
+				88CF118322040DBC00032236 /* RxSwift.framework in Frameworks */,
+				88CF1167220406EF00032236 /* CMFourSquareLayer.framework in Frameworks */,
+				88CF117B22040DBC00032236 /* CMLocationLayer.framework in Frameworks */,
+				88CF117422040DAA00032236 /* CMViewLayer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88CF11352204056000032236 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				887209EF220944B5007B4A18 /* RxMKMapView.framework in Frameworks */,
+				88CF1168220406F600032236 /* CMFourSquareLayer.framework in Frameworks */,
+				88CF1169220406F600032236 /* CMLocationLayer.framework in Frameworks */,
+				88CF115F220406B600032236 /* RxCocoa.framework in Frameworks */,
+				88CF1160220406B600032236 /* SnapKit.framework in Frameworks */,
+				88CF1161220406B600032236 /* RxDataSources.framework in Frameworks */,
+				88CF1162220406B600032236 /* RxSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88CF11422204059500032236 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				887209ED2209445A007B4A18 /* RxHttpClient.framework in Frameworks */,
+				88CF1163220406CE00032236 /* RxCocoa.framework in Frameworks */,
+				88CF1164220406CE00032236 /* RxSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88CF114F220405B000032236 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				887209EB2209443C007B4A18 /* RxCoreLocation.framework in Frameworks */,
+				88CF1165220406DD00032236 /* RxCocoa.framework in Frameworks */,
+				88CF1166220406DD00032236 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88720A0E220B7132007B4A18 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				88720A4B220D4B19007B4A18 /* Models */,
+				88720A0F220B715F007B4A18 /* MapViewController.swift */,
+				88720A11220B717E007B4A18 /* MapCoordinator.swift */,
+				88720A13220B7188007B4A18 /* MapViewModel.swift */,
+				88720A15220B719D007B4A18 /* MapInteractor.swift */,
+				88720A49220D2F9F007B4A18 /* MapViewState.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		88720A19220BC258007B4A18 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88720A1E220BCDA2007B4A18 /* Response */,
+				88720A1A220BC5A3007B4A18 /* Venue.swift */,
+				88720A1C220BCB97007B4A18 /* Category.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88720A1E220BCDA2007B4A18 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				88720A1F220BCDB7007B4A18 /* VenueSearchResponse.swift */,
+				88720A21220BCDDB007B4A18 /* Meta.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		88720A28220BCEE0007B4A18 /* CMFourSquareLayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				88720A3B220BD278007B4A18 /* CodableModelTests.swift */,
+				88720A32220BCFE7007B4A18 /* Models */,
+				88720A2B220BCEE0007B4A18 /* Info.plist */,
+				88720A44220BF320007B4A18 /* CMFourSquareURLGeneratorTests.swift */,
+			);
+			path = CMFourSquareLayerTests;
+			sourceTree = "<group>";
+		};
+		88720A32220BCFE7007B4A18 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88720A3D220BDF3F007B4A18 /* Mock */,
+				88720A33220BCFF2007B4A18 /* Response */,
+				88720A37220BD05D007B4A18 /* VenueTests.swift */,
+				88720A39220BD137007B4A18 /* json.bundle */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88720A33220BCFF2007B4A18 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				88720A34220BD035007B4A18 /* VenueSearchResponseTests.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		88720A3D220BDF3F007B4A18 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				88720A3E220BDF4C007B4A18 /* VenueMock.swift */,
+				88720A40220BDF5A007B4A18 /* VenueSearchResponseMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		88720A4B220D4B19007B4A18 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88720A4C220D4B2B007B4A18 /* VenueAnnotation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88720A4E220D4DD5007B4A18 /* VenueDetail */ = {
+			isa = PBXGroup;
+			children = (
+				88720A4F220D4DF0007B4A18 /* VenueDetailCoordinator.swift */,
+				88720A51220D4DFA007B4A18 /* VenueDetailViewController.swift */,
+				88720A53220D4E04007B4A18 /* VenueDetailInteractor.swift */,
+				88720A55220D4E0E007B4A18 /* VenueDetailViewModel.swift */,
+				88720A57220D4FAC007B4A18 /* VenueDetailViewState.swift */,
+			);
+			path = VenueDetail;
+			sourceTree = "<group>";
+		};
 		88CF11152203FF3B00032236 = {
 			isa = PBXGroup;
 			children = (
 				88CF11202203FF3B00032236 /* caffeine.me */,
+				88CF11392204056000032236 /* CMViewLayer */,
+				88CF11462204059500032236 /* CMFourSquareLayer */,
+				88CF1153220405B000032236 /* CMLocationLayer */,
 				88CF111F2203FF3B00032236 /* Products */,
+				88CF115A220406B500032236 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,6 +370,10 @@
 			isa = PBXGroup;
 			children = (
 				88CF111E2203FF3B00032236 /* caffeine.me.app */,
+				88CF11382204056000032236 /* CMViewLayer.framework */,
+				88CF11452204059500032236 /* CMFourSquareLayer.framework */,
+				88CF1152220405B000032236 /* CMLocationLayer.framework */,
+				88720A27220BCEE0007B4A18 /* CMFourSquareLayerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,8 +382,6 @@
 			isa = PBXGroup;
 			children = (
 				88CF11212203FF3B00032236 /* AppDelegate.swift */,
-				88CF11232203FF3B00032236 /* ViewController.swift */,
-				88CF11252203FF3B00032236 /* Main.storyboard */,
 				88CF11282203FF3D00032236 /* Assets.xcassets */,
 				88CF112A2203FF3D00032236 /* LaunchScreen.storyboard */,
 				88CF112D2203FF3D00032236 /* Info.plist */,
@@ -64,9 +389,118 @@
 			path = caffeine.me;
 			sourceTree = "<group>";
 		};
+		88CF11392204056000032236 /* CMViewLayer */ = {
+			isa = PBXGroup;
+			children = (
+				88720A4E220D4DD5007B4A18 /* VenueDetail */,
+				88720A0E220B7132007B4A18 /* Map */,
+				88CF116C2204088200032236 /* Base */,
+				88CF113A2204056000032236 /* CMViewLayer.h */,
+				88CF113B2204056000032236 /* Info.plist */,
+			);
+			name = CMViewLayer;
+			path = Sources/CMViewLayer;
+			sourceTree = "<group>";
+		};
+		88CF11462204059500032236 /* CMFourSquareLayer */ = {
+			isa = PBXGroup;
+			children = (
+				88720A28220BCEE0007B4A18 /* CMFourSquareLayerTests */,
+				88720A19220BC258007B4A18 /* Models */,
+				88CF11472204059500032236 /* CMFourSquareLayer.h */,
+				88CF11482204059500032236 /* Info.plist */,
+				88720A17220BBC49007B4A18 /* CMFourSquareRelay.swift */,
+				88720A42220BF070007B4A18 /* CMFourSquareURLGenerator.swift */,
+			);
+			name = CMFourSquareLayer;
+			path = Sources/CMFourSquareLayer;
+			sourceTree = "<group>";
+		};
+		88CF1153220405B000032236 /* CMLocationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				88CF1154220405B000032236 /* CMLocationLayer.h */,
+				88CF1155220405B000032236 /* Info.plist */,
+				887209F022094550007B4A18 /* CMLocationRelay.swift */,
+			);
+			name = CMLocationLayer;
+			path = Sources/CMLocationLayer;
+			sourceTree = "<group>";
+		};
+		88CF115A220406B500032236 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88720A5E220DB21D007B4A18 /* Differentiator.framework */,
+				887209F5220955CB007B4A18 /* MapKit.framework */,
+				887209EE220944B5007B4A18 /* RxMKMapView.framework */,
+				887209EC2209445A007B4A18 /* RxHttpClient.framework */,
+				887209EA2209443C007B4A18 /* RxCoreLocation.framework */,
+				88CF115B220406B500032236 /* RxCocoa.framework */,
+				88CF115D220406B500032236 /* RxDataSources.framework */,
+				88CF115E220406B600032236 /* RxSwift.framework */,
+				88CF115C220406B500032236 /* SnapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88CF116C2204088200032236 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				88CF116D2204090600032236 /* AppCoordinator.swift */,
+				88CF116E2204090600032236 /* BaseCoordinator.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		88CF11332204056000032236 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88CF113C2204056000032236 /* CMViewLayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88CF11402204059500032236 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88CF11492204059500032236 /* CMFourSquareLayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88CF114D220405B000032236 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88CF1156220405B000032236 /* CMLocationLayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		88720A26220BCEE0007B4A18 /* CMFourSquareLayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88720A2F220BCEE0007B4A18 /* Build configuration list for PBXNativeTarget "CMFourSquareLayerTests" */;
+			buildPhases = (
+				88720A23220BCEE0007B4A18 /* Sources */,
+				88720A24220BCEE0007B4A18 /* Frameworks */,
+				88720A25220BCEE0007B4A18 /* Resources */,
+				88720A46220BF548007B4A18 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88720A2E220BCEE0007B4A18 /* PBXTargetDependency */,
+			);
+			name = CMFourSquareLayerTests;
+			productName = CMFourSquareLayerTests;
+			productReference = 88720A27220BCEE0007B4A18 /* CMFourSquareLayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		88CF111D2203FF3B00032236 /* caffeine.me */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88CF11302203FF3D00032236 /* Build configuration list for PBXNativeTarget "caffeine.me" */;
@@ -74,15 +508,76 @@
 				88CF111A2203FF3B00032236 /* Sources */,
 				88CF111B2203FF3B00032236 /* Frameworks */,
 				88CF111C2203FF3B00032236 /* Resources */,
+				88CF117622040DAA00032236 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				88CF117322040D5A00032236 /* PBXTargetDependency */,
+				88CF117A22040DBC00032236 /* PBXTargetDependency */,
+				88CF117E22040DBC00032236 /* PBXTargetDependency */,
 			);
 			name = caffeine.me;
 			productName = caffeine.me;
 			productReference = 88CF111E2203FF3B00032236 /* caffeine.me.app */;
 			productType = "com.apple.product-type.application";
+		};
+		88CF11372204056000032236 /* CMViewLayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88CF113F2204056000032236 /* Build configuration list for PBXNativeTarget "CMViewLayer" */;
+			buildPhases = (
+				887209F222095336007B4A18 /* Copy Carthage Frameworks */,
+				88CF11332204056000032236 /* Headers */,
+				88CF11342204056000032236 /* Sources */,
+				88CF11352204056000032236 /* Frameworks */,
+				88CF11362204056000032236 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CMViewLayer;
+			productName = CMViewLayer;
+			productReference = 88CF11382204056000032236 /* CMViewLayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		88CF11442204059500032236 /* CMFourSquareLayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88CF114A2204059500032236 /* Build configuration list for PBXNativeTarget "CMFourSquareLayer" */;
+			buildPhases = (
+				887209F3220953DE007B4A18 /* Copy Carthage Frameworks */,
+				88CF11402204059500032236 /* Headers */,
+				88CF11412204059500032236 /* Sources */,
+				88CF11422204059500032236 /* Frameworks */,
+				88CF11432204059500032236 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CMFourSquareLayer;
+			productName = CMFourSquareLayer;
+			productReference = 88CF11452204059500032236 /* CMFourSquareLayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		88CF1151220405B000032236 /* CMLocationLayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88CF1157220405B000032236 /* Build configuration list for PBXNativeTarget "CMLocationLayer" */;
+			buildPhases = (
+				88CF114D220405B000032236 /* Headers */,
+				88CF114E220405B000032236 /* Sources */,
+				88CF114F220405B000032236 /* Frameworks */,
+				88CF1150220405B000032236 /* Resources */,
+				887209F422095463007B4A18 /* Copy Carthage Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CMLocationLayer;
+			productName = CMLocationLayer;
+			productReference = 88CF1152220405B000032236 /* CMLocationLayer.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -94,8 +589,29 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Blake Macnair";
 				TargetAttributes = {
+					88720A26220BCEE0007B4A18 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+					};
 					88CF111D2203FF3B00032236 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					88CF11372204056000032236 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+					};
+					88CF11442204059500032236 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+					};
+					88CF1151220405B000032236 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -113,44 +629,223 @@
 			projectRoot = "";
 			targets = (
 				88CF111D2203FF3B00032236 /* caffeine.me */,
+				88CF11372204056000032236 /* CMViewLayer */,
+				88CF11442204059500032236 /* CMFourSquareLayer */,
+				88720A26220BCEE0007B4A18 /* CMFourSquareLayerTests */,
+				88CF1151220405B000032236 /* CMLocationLayer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		88720A25220BCEE0007B4A18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88720A3A220BD137007B4A18 /* json.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88CF111C2203FF3B00032236 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				88CF112C2203FF3D00032236 /* LaunchScreen.storyboard in Resources */,
 				88CF11292203FF3D00032236 /* Assets.xcassets in Resources */,
-				88CF11272203FF3B00032236 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88CF11362204056000032236 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88CF11432204059500032236 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88CF1150220405B000032236 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		887209F222095336007B4A18 /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxMKMapView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxMKMapView.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxDataSources.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		887209F3220953DE007B4A18 /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxHttpClient.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxHttpClient.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		887209F422095463007B4A18 /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCoreLocation.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCoreLocation.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		88720A23220BCEE0007B4A18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88720A35220BD035007B4A18 /* VenueSearchResponseTests.swift in Sources */,
+				88720A3C220BD278007B4A18 /* CodableModelTests.swift in Sources */,
+				88720A45220BF320007B4A18 /* CMFourSquareURLGeneratorTests.swift in Sources */,
+				88720A38220BD05D007B4A18 /* VenueTests.swift in Sources */,
+				88720A3F220BDF4C007B4A18 /* VenueMock.swift in Sources */,
+				88720A41220BDF5A007B4A18 /* VenueSearchResponseMock.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88CF111A2203FF3B00032236 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88CF11242203FF3B00032236 /* ViewController.swift in Sources */,
 				88CF11222203FF3B00032236 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88CF11342204056000032236 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88CF116F2204090600032236 /* AppCoordinator.swift in Sources */,
+				88720A54220D4E04007B4A18 /* VenueDetailInteractor.swift in Sources */,
+				88720A52220D4DFA007B4A18 /* VenueDetailViewController.swift in Sources */,
+				88720A4A220D2F9F007B4A18 /* MapViewState.swift in Sources */,
+				88720A58220D4FAC007B4A18 /* VenueDetailViewState.swift in Sources */,
+				88720A14220B7188007B4A18 /* MapViewModel.swift in Sources */,
+				88720A12220B717E007B4A18 /* MapCoordinator.swift in Sources */,
+				88720A16220B719D007B4A18 /* MapInteractor.swift in Sources */,
+				88720A56220D4E0E007B4A18 /* VenueDetailViewModel.swift in Sources */,
+				88720A10220B715F007B4A18 /* MapViewController.swift in Sources */,
+				88720A50220D4DF0007B4A18 /* VenueDetailCoordinator.swift in Sources */,
+				88720A4D220D4B2B007B4A18 /* VenueAnnotation.swift in Sources */,
+				88CF11702204090600032236 /* BaseCoordinator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88CF11412204059500032236 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88720A20220BCDB7007B4A18 /* VenueSearchResponse.swift in Sources */,
+				88720A18220BBC49007B4A18 /* CMFourSquareRelay.swift in Sources */,
+				88720A43220BF070007B4A18 /* CMFourSquareURLGenerator.swift in Sources */,
+				88720A1B220BC5A3007B4A18 /* Venue.swift in Sources */,
+				88720A22220BCDDB007B4A18 /* Meta.swift in Sources */,
+				88720A1D220BCB97007B4A18 /* Category.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88CF114E220405B000032236 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				887209F122094550007B4A18 /* CMLocationRelay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		88CF11252203FF3B00032236 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				88CF11262203FF3B00032236 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		88720A2E220BCEE0007B4A18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88CF11442204059500032236 /* CMFourSquareLayer */;
+			targetProxy = 88720A2D220BCEE0007B4A18 /* PBXContainerItemProxy */;
 		};
+		88CF117322040D5A00032236 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88CF11372204056000032236 /* CMViewLayer */;
+			targetProxy = 88CF117222040D5A00032236 /* PBXContainerItemProxy */;
+		};
+		88CF117A22040DBC00032236 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88CF11442204059500032236 /* CMFourSquareLayer */;
+			targetProxy = 88CF117922040DBC00032236 /* PBXContainerItemProxy */;
+		};
+		88CF117E22040DBC00032236 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88CF1151220405B000032236 /* CMLocationLayer */;
+			targetProxy = 88CF117D22040DBC00032236 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
 		88CF112A2203FF3D00032236 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -162,6 +857,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		88720A30220BCEE0007B4A18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/CMFourSquareLayer/CMFourSquareLayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = macnair.CMFourSquareLayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		88720A31220BCEE0007B4A18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/CMFourSquareLayer/CMFourSquareLayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = macnair.CMFourSquareLayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		88CF112E2203FF3D00032236 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -281,8 +1021,14 @@
 		88CF11312203FF3D00032236 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PCSX5KABFK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = caffeine.me/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,8 +1044,14 @@
 		88CF11322203FF3D00032236 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PCSX5KABFK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = caffeine.me/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -312,9 +1064,213 @@
 			};
 			name = Release;
 		};
+		88CF113D2204056000032236 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/CMViewLayer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = macnair.CMViewLayer;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		88CF113E2204056000032236 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/CMViewLayer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = macnair.CMViewLayer;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		88CF114B2204059500032236 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/CMFourSquareLayer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = macnair.CMFourSquareLayer;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		88CF114C2204059500032236 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/CMFourSquareLayer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = macnair.CMFourSquareLayer;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		88CF1158220405B000032236 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/CMLocationLayer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = macnair.CMLocationLayer;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		88CF1159220405B000032236 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/CMLocationLayer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = macnair.CMLocationLayer;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		88720A2F220BCEE0007B4A18 /* Build configuration list for PBXNativeTarget "CMFourSquareLayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88720A30220BCEE0007B4A18 /* Debug */,
+				88720A31220BCEE0007B4A18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		88CF11192203FF3B00032236 /* Build configuration list for PBXProject "caffeine.me" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -329,6 +1285,33 @@
 			buildConfigurations = (
 				88CF11312203FF3D00032236 /* Debug */,
 				88CF11322203FF3D00032236 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88CF113F2204056000032236 /* Build configuration list for PBXNativeTarget "CMViewLayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88CF113D2204056000032236 /* Debug */,
+				88CF113E2204056000032236 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88CF114A2204059500032236 /* Build configuration list for PBXNativeTarget "CMFourSquareLayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88CF114B2204059500032236 /* Debug */,
+				88CF114C2204059500032236 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88CF1157220405B000032236 /* Build configuration list for PBXNativeTarget "CMLocationLayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88CF1158220405B000032236 /* Debug */,
+				88CF1159220405B000032236 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
