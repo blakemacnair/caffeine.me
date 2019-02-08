@@ -28,7 +28,7 @@ final class VenueDetailViewController: UIViewController, VenueDetailViewControll
     let state = BehaviorRelay<VenueDetailViewState>(value: .loading)
     let uiEvents = PublishRelay<VenueDetailViewAction>()
 
-    // MARK: = Public
+    // MARK: - Public
 
     public override func loadView() {
         self.view = rootView
@@ -37,21 +37,35 @@ final class VenueDetailViewController: UIViewController, VenueDetailViewControll
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.leftBarButtonItem = rootView.dismissItem
+
         state.asDriver()
             .drive(onNext: { [unowned self] in self.configureView(for: $0) })
             .disposed(by: disposeBag)
     }
 
-    func configureView(for state: VenueDetailViewState) {
+    // MARK: - Private
+
+    private func configureView(for state: VenueDetailViewState) {
         guard case .ready(let venue) = state else { return }
         rootView.titleLabel.text = venue.name
         rootView.subtitleLabel.text = venue.location.formattedAddress.joined(separator: "\n")
+    }
+
+    private func bindEvents() {
+        let dismissAction = rootView.dismissItem.rx.tap.map { VenueDetailViewAction.tappedExit }
+        dismissAction.bind(to: uiEvents)
+            .disposed(by: disposeBag)
     }
 }
 
 final class VenueDetailView: UIView {
 
     // MARK: - Properties
+
+    let dismissItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.done,
+                                           target: nil,
+                                           action: nil)
 
     let titleLabel: UILabel = {
         let label = UILabel()
