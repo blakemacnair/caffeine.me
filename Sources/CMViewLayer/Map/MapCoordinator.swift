@@ -49,11 +49,11 @@ final class MapCoordinator: BaseCoordinator<Void> {
             .bind(to: self.viewModel.actions)
             .disposed(by: disposeBag)
 
-        self.viewModel.state.debug("MODEL STATE")
+        self.viewModel.state
             .drive(self.viewController.state)
             .disposed(by: disposeBag)
 
-        self.interactor.state.toViewAction().debug("INT ACTION")
+        self.interactor.state.toViewAction()
             .bind(to: viewModel.actions)
             .disposed(by: disposeBag)
 

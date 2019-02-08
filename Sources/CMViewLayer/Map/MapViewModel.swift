@@ -27,7 +27,7 @@ struct MapViewModel: MapViewModelProtocol {
 extension ObservableType where E == MapViewAction {
     func toViewState(initialState: MapViewState) -> Driver<MapViewState> {
         return self
-            .reduce(initialState, accumulator: MapViewState.reduce)
+            .scan(initialState, accumulator: MapViewState.reduce)
             .asDriver(onErrorJustReturn: .ready(annotations: [], error: .unknown))
             .startWith(initialState)
     }
