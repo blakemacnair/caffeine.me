@@ -64,7 +64,8 @@ final class MapViewController: UIViewController & MapViewControllerProtocol {
 
     private func driveEventsRelay() {
         let venueTappedAction = rootView.rx.didSelectAnnotationView
-            .map { mkAnnotationView -> VenueAnnotation? in
+            .map { [unowned self] mkAnnotationView -> VenueAnnotation? in
+                self.rootView.deselectAnnotation(mkAnnotationView.annotation, animated: true)
                 guard let annotation = mkAnnotationView.annotation as? VenueAnnotation
                     else { return nil }
                 return annotation
