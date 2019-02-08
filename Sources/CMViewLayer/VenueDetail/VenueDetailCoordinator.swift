@@ -12,10 +12,12 @@ import RxCocoa
 import struct CMFourSquareLayer.Venue
 
 final class VenueDetailCoordinator: BaseCoordinator<Void> {
+    private let navigationController: UINavigationController
     private let viewController: VenueDetailViewControllerProtocol & UIViewController
     private let viewModel: VenueDetailViewModelProtocol
 
-    init(venue: Venue) {
+    init(venue: Venue, navigationController: UINavigationController) {
+        self.navigationController = navigationController
         self.viewController = VenueDetailViewController()
         self.viewModel = VenueDetailViewModel(venue: venue)
     }
@@ -27,6 +29,8 @@ final class VenueDetailCoordinator: BaseCoordinator<Void> {
             .filter { $0 == .dismissView }
             .map { _ in return () }
             .asObservable()
+
+        navigationController.present(viewController, animated: true)
 
         return Observable<Void>.never().takeUntil(dismissEvent).asSignal(onErrorJustReturn: ())
     }
