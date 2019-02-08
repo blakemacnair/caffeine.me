@@ -7,6 +7,7 @@
 //
 
 import class CoreLocation.CLPlacemark
+import struct CMFourSquareLayer.Venue
 
 enum MapViewError: Error, Equatable {
     case notAuthorized
@@ -29,4 +30,9 @@ enum MapViewState {
 enum MapViewAction {
     case locationServicesUpdated(userPlacemark: CLPlacemark, annotations: [VenueAnnotation])
     case annotationTapped(VenueAnnotation)
+}
+
+enum MapCoordinatorRequest {
+    case displayVenueDetails(Venue)
+    case displayError(MapViewError)
 }
