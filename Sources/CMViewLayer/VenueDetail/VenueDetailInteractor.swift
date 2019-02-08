@@ -6,4 +6,15 @@
 //  Copyright © 2019 Blake Macnair. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+import RxCocoa
+
+import CMFourSquareLayer
+
+protocol VenueDetailInteractorProtocol {
+
+}
+
+final class VenueDetailInteractor {
+    
+}

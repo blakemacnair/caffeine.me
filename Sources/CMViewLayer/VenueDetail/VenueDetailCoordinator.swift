@@ -6,4 +6,9 @@
 //  Copyright © 2019 Blake Macnair. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+import RxCocoa
+
+final class VenueDetailCoordinator: BaseCoordinator<Void> {
+
+}

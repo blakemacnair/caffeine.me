@@ -6,4 +6,14 @@
 //  Copyright © 2019 Blake Macnair. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+import RxCocoa
+
+protocol VenueDetailViewControllerProtocol {
+    var state: BehaviorRelay<VenueDetailViewState> { get }
+    var uiEvents: PublishRelay<VenueDetailViewAction> { get }
+}
+
+final class VenueDetailViewController: UIViewController {
+    
+}

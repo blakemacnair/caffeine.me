@@ -6,4 +6,15 @@
 //  Copyright © 2019 Blake Macnair. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+import RxCocoa
+
+protocol VenueDetailViewModelProtocol {
+    var actions: PublishRelay<VenueDetailViewAction> { get }
+    var state: Driver<VenueDetailViewState> { get }
+    var coordinatorRequests: Driver<VenueDetailCoordinatorRequest> { get }
+}
+
+final class VenueDetailViewModel {
+    
+}
