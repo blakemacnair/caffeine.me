@@ -33,19 +33,45 @@ final class VenueDetailViewController: UIViewController, VenueDetailViewControll
     public override func loadView() {
         self.view = rootView
     }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        state.asDriver()
+            .drive(onNext: { [unowned self] in self.configureView(for: $0) })
+            .disposed(by: disposeBag)
+    }
+
+    func configureView(for state: VenueDetailViewState) {
+        guard case .ready(let venue) = state else { return }
+        rootView.titleLabel.text = venue.name
+        rootView.subtitleLabel.text = venue.location.formattedAddress.joined(separator: "\n")
+    }
 }
 
 final class VenueDetailView: UIView {
 
     // MARK: - Properties
 
-    private let titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
 
         label.text = "VENUE"
         label.font = .preferredFont(forTextStyle: .title2)
-        label.textAlignment = .center
+        label.textAlignment = .left
+        label.numberOfLines = 0
+
+        return label
+    }()
+
+    let subtitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        label.text = "ADDRESS"
+        label.font = .preferredFont(forTextStyle: .body)
+        label.textAlignment = .left
         label.numberOfLines = 0
 
         return label
