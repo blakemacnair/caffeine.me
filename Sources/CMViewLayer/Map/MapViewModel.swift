@@ -25,5 +25,12 @@ protocol MapViewModelProtocol {
     var state: Driver<MapViewState> { get }
 }
 
-struct MapViewModel {
+struct MapViewModel: MapViewModelProtocol {
+    let actions = PublishRelay<MapViewAction>()
+
+    var state: Driver<MapViewState>
+
+    init(interactor: MapInteractorProtocol) {
+        state = Observable.just(MapViewState.loading).asDriver(onErrorJustReturn: .loading)
+    }
 }
