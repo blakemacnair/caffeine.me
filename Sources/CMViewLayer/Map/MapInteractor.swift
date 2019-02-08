@@ -14,13 +14,12 @@ import CMFourSquareLayer
 
 import class CoreLocation.CLPlacemark
 import enum CoreLocation.CLAuthorizationStatus
-import class MapKit.MKPointAnnotation
 
 enum MapInteractorState: Equatable {
     case loading
     case locationServicesNotAuthorized
     case locationServicesUnavailable
-    case ready(userPlacemark: CLPlacemark, annotations: [MKPointAnnotation])
+    case ready(userPlacemark: CLPlacemark, annotations: [VenueAnnotation])
 }
 
 protocol MapInteractorProtocol {
@@ -51,7 +50,7 @@ final class MapInteractor: MapInteractorProtocol {
         Observable.combineLatest(locationRelay.placemark, venuesRelay.asObservable())
             .map { (arg) -> MapInteractorState in
                 let (placemark, venues) = arg
-                let annotations = venues.compactMap { MKPointAnnotation($0) }
+                let annotations = venues.compactMap { VenueAnnotation($0) }
                 return .ready(userPlacemark: placemark, annotations: annotations)
             }
             .bind(to: stateRelay)

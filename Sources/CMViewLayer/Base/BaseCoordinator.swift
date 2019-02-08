@@ -30,7 +30,8 @@ open class BaseCoordinator<Result> {
     open func addChild<T>(_ coordinator: BaseCoordinator<T>) -> Signal<T> {
         store(coordinator)
         return coordinator.start()
-            .do(onNext: { [weak self] _ in self?.free(coordinator) })
+            .do(onNext: { [weak self] _ in self?.free(coordinator) },
+                onCompleted: { [weak self] in self?.free(coordinator) })
     }
 
     /// Tells the coordinator to start working.

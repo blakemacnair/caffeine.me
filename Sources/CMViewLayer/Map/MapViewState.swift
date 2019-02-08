@@ -7,7 +7,7 @@
 //
 
 import class CoreLocation.CLPlacemark
-import class MapKit.MKPointAnnotation
+import struct CMFourSquareLayer.Venue
 
 enum MapViewError: Error, Equatable {
     case notAuthorized
@@ -17,9 +17,9 @@ enum MapViewError: Error, Equatable {
 
 enum MapViewState {
     case loading
-    case ready(userPlacemark: CLPlacemark?, annotations: [MKPointAnnotation], error: MapViewError?)
+    case ready(userPlacemark: CLPlacemark?, annotations: [VenueAnnotation], error: MapViewError?)
 
-    var annotations: [MKPointAnnotation] {
+    var annotations: [VenueAnnotation] {
         switch self {
         case .loading: return []
         case .ready(_, let annotations, _): return annotations
@@ -28,5 +28,11 @@ enum MapViewState {
 }
 
 enum MapViewAction {
-    case locationServicesUpdated(userPlacemark: CLPlacemark, annotations: [MKPointAnnotation])
+    case locationServicesUpdated(userPlacemark: CLPlacemark, annotations: [VenueAnnotation])
+    case annotationTapped(VenueAnnotation)
+}
+
+enum MapCoordinatorRequest {
+    case displayVenueDetails(Venue)
+    case displayError(MapViewError)
 }

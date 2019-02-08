@@ -57,8 +57,28 @@ final class MapCoordinator: BaseCoordinator<Void> {
             .bind(to: viewModel.actions)
             .disposed(by: disposeBag)
 
+        self.viewModel.coordinatorRequests
+            .asObservable()
+            .subscribe(onNext: { [unowned self] req in
+                switch req {
+                case .displayVenueDetails(let venue):
+                    self.displayVenueDetails(for: venue)
+                case .displayError:
+                    break
+                }
+            })
+            .disposed(by: disposeBag)
+
         interactor.startLocationServies()
         interactor.refreshVenues()
+    }
+
+    private func displayVenueDetails(for venue: Venue) {
+        let detailCoord = VenueDetailCoordinator(venue: venue,
+                                                 presentingViewController: self.navigationController)
+        addChild(detailCoord).asObservable()
+            .subscribe()
+            .disposed(by: disposeBag)
     }
 }
 

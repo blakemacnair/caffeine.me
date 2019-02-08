@@ -28,13 +28,3 @@ public struct Venue: Equatable & Codable {
     public let location: Location
     public let categories: [Category]
 }
-
-public extension MKPointAnnotation {
-    public convenience init?(_ base: Venue) {
-        guard let lat = base.location.lat, let long = base.location.lng else { return nil }
-        self.init()
-        self.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-        self.title = base.name
-        self.subtitle = base.location.address
-    }
-}

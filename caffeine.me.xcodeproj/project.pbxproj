@@ -33,6 +33,12 @@
 		88720A47220BF555007B4A18 /* RxHttpClient.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 887209EC2209445A007B4A18 /* RxHttpClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		88720A48220BF5A2007B4A18 /* RxHttpClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887209EC2209445A007B4A18 /* RxHttpClient.framework */; };
 		88720A4A220D2F9F007B4A18 /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A49220D2F9F007B4A18 /* MapViewState.swift */; };
+		88720A4D220D4B2B007B4A18 /* VenueAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A4C220D4B2B007B4A18 /* VenueAnnotation.swift */; };
+		88720A50220D4DF0007B4A18 /* VenueDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A4F220D4DF0007B4A18 /* VenueDetailCoordinator.swift */; };
+		88720A52220D4DFA007B4A18 /* VenueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A51220D4DFA007B4A18 /* VenueDetailViewController.swift */; };
+		88720A54220D4E04007B4A18 /* VenueDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A53220D4E04007B4A18 /* VenueDetailInteractor.swift */; };
+		88720A56220D4E0E007B4A18 /* VenueDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A55220D4E0E007B4A18 /* VenueDetailViewModel.swift */; };
+		88720A58220D4FAC007B4A18 /* VenueDetailViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88720A57220D4FAC007B4A18 /* VenueDetailViewState.swift */; };
 		88CF11222203FF3B00032236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF11212203FF3B00032236 /* AppDelegate.swift */; };
 		88CF11292203FF3D00032236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88CF11282203FF3D00032236 /* Assets.xcassets */; };
 		88CF112C2203FF3D00032236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88CF112A2203FF3D00032236 /* LaunchScreen.storyboard */; };
@@ -156,6 +162,12 @@
 		88720A42220BF070007B4A18 /* CMFourSquareURLGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMFourSquareURLGenerator.swift; sourceTree = "<group>"; };
 		88720A44220BF320007B4A18 /* CMFourSquareURLGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMFourSquareURLGeneratorTests.swift; sourceTree = "<group>"; };
 		88720A49220D2F9F007B4A18 /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
+		88720A4C220D4B2B007B4A18 /* VenueAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueAnnotation.swift; sourceTree = "<group>"; };
+		88720A4F220D4DF0007B4A18 /* VenueDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailCoordinator.swift; sourceTree = "<group>"; };
+		88720A51220D4DFA007B4A18 /* VenueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailViewController.swift; sourceTree = "<group>"; };
+		88720A53220D4E04007B4A18 /* VenueDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailInteractor.swift; sourceTree = "<group>"; };
+		88720A55220D4E0E007B4A18 /* VenueDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailViewModel.swift; sourceTree = "<group>"; };
+		88720A57220D4FAC007B4A18 /* VenueDetailViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailViewState.swift; sourceTree = "<group>"; };
 		88CF111E2203FF3B00032236 /* caffeine.me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caffeine.me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CF11212203FF3B00032236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88CF11282203FF3D00032236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -245,6 +257,7 @@
 		88720A0E220B7132007B4A18 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				88720A4B220D4B19007B4A18 /* Models */,
 				88720A0F220B715F007B4A18 /* MapViewController.swift */,
 				88720A11220B717E007B4A18 /* MapCoordinator.swift */,
 				88720A13220B7188007B4A18 /* MapViewModel.swift */,
@@ -312,6 +325,26 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		88720A4B220D4B19007B4A18 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88720A4C220D4B2B007B4A18 /* VenueAnnotation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88720A4E220D4DD5007B4A18 /* VenueDetail */ = {
+			isa = PBXGroup;
+			children = (
+				88720A4F220D4DF0007B4A18 /* VenueDetailCoordinator.swift */,
+				88720A51220D4DFA007B4A18 /* VenueDetailViewController.swift */,
+				88720A53220D4E04007B4A18 /* VenueDetailInteractor.swift */,
+				88720A55220D4E0E007B4A18 /* VenueDetailViewModel.swift */,
+				88720A57220D4FAC007B4A18 /* VenueDetailViewState.swift */,
+			);
+			path = VenueDetail;
+			sourceTree = "<group>";
+		};
 		88CF11152203FF3B00032236 = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +383,7 @@
 		88CF11392204056000032236 /* CMViewLayer */ = {
 			isa = PBXGroup;
 			children = (
+				88720A4E220D4DD5007B4A18 /* VenueDetail */,
 				88720A0E220B7132007B4A18 /* Map */,
 				88CF116C2204088200032236 /* Base */,
 				88CF113A2204056000032236 /* CMViewLayer.h */,
@@ -740,11 +774,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				88CF116F2204090600032236 /* AppCoordinator.swift in Sources */,
+				88720A54220D4E04007B4A18 /* VenueDetailInteractor.swift in Sources */,
+				88720A52220D4DFA007B4A18 /* VenueDetailViewController.swift in Sources */,
 				88720A4A220D2F9F007B4A18 /* MapViewState.swift in Sources */,
+				88720A58220D4FAC007B4A18 /* VenueDetailViewState.swift in Sources */,
 				88720A14220B7188007B4A18 /* MapViewModel.swift in Sources */,
 				88720A12220B717E007B4A18 /* MapCoordinator.swift in Sources */,
 				88720A16220B719D007B4A18 /* MapInteractor.swift in Sources */,
+				88720A56220D4E0E007B4A18 /* VenueDetailViewModel.swift in Sources */,
 				88720A10220B715F007B4A18 /* MapViewController.swift in Sources */,
+				88720A50220D4DF0007B4A18 /* VenueDetailCoordinator.swift in Sources */,
+				88720A4D220D4B2B007B4A18 /* VenueAnnotation.swift in Sources */,
 				88CF11702204090600032236 /* BaseCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
