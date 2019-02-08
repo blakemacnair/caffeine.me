@@ -53,7 +53,7 @@ final class MapInteractor: MapInteractorProtocol {
 
         let seed: CLLocation? = CLLocation(latitude: 0, longitude: 0)
 
-        let placemarkUpdate = locationRelay.placemark.map { $0.location }
+        let placemarkSignificantChange = locationRelay.placemark.map { $0.location }
             .scan(seed,
                   accumulator: { [distanceFilter] seed, newValue -> CLLocation? in
                     guard let seed = seed, let newLocation = newValue else { return newValue }
@@ -61,10 +61,13 @@ final class MapInteractor: MapInteractorProtocol {
                     return shouldUpdate ? newValue : seed
             })
             .distinctUntilChanged()
+            .do(onNext: { [unowned self] _ in
+                self.refreshVenues()
+            })
             .withLatestFrom(locationRelay.placemark)
 
 
-        Observable.combineLatest(placemarkUpdate,
+        Observable.combineLatest(placemarkSignificantChange,
                                  venuesRelay.asObservable())
             .map { (arg) -> MapInteractorState in
                 let (placemark, venues) = arg
@@ -89,13 +92,13 @@ final class MapInteractor: MapInteractorProtocol {
     }
 
     func refreshVenues() {
-        locationRelay.placemark
+        locationRelay.placemark.take(1)
             .filter { $0.location != nil }
             .map { $0.location! }
             .flatMapLatest { [unowned self] location -> Observable<[Venue]> in
                 return self.fourSquareRelay.coffeeShopsNear(location: location,
                                                             limit: 10,
-                                                            radius: 500)
+                                                            radius: 500).debug("NEARBY", trimOutput: true)
             }
             .bind(to: self.venuesRelay)
             .disposed(by: disposeBag)

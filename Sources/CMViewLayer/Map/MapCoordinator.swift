@@ -70,7 +70,6 @@ final class MapCoordinator: BaseCoordinator<Void> {
             .disposed(by: disposeBag)
 
         interactor.startLocationServies()
-        interactor.refreshVenues()
     }
 
     private func displayVenueDetails(for venue: Venue) {
