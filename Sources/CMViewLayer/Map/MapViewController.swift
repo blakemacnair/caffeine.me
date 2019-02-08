@@ -15,6 +15,8 @@ import struct MapKit.MKCoordinateRegion
 import struct CoreLocation.CLLocationCoordinate2D
 import RxMKMapView
 
+import struct CMFourSquareLayer.Venue
+
 protocol MapViewControllerProtocol {
     var state: BehaviorRelay<MapViewState> { get }
     var uiEvents: PublishRelay<MapViewAction> { get }
@@ -38,6 +40,7 @@ final class MapViewController: UIViewController & MapViewControllerProtocol {
             .disposed(by: disposeBag)
 
         driveState()
+        driveEventsRelay()
     }
 
     override func loadView() {
@@ -60,7 +63,17 @@ final class MapViewController: UIViewController & MapViewControllerProtocol {
     }
 
     private func driveEventsRelay() {
-        // TODO: Implement user interactions
+        let venueTappedAction = rootView.rx.didSelectAnnotationView.debug("CLICK")
+            .map { mkAnnotationView -> VenueAnnotation? in
+                guard let annotation = mkAnnotationView.annotation as? VenueAnnotation
+                    else { return nil }
+                return annotation
+            }
+            .filter { $0 != nil }
+            .map { $0! }
+            .map { MapViewAction.annotationTapped($0) }
+
+        venueTappedAction.bind(to: uiEvents).disposed(by: disposeBag)
     }
 
     private func driveState() {
