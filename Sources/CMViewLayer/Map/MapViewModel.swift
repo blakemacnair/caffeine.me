@@ -9,15 +9,27 @@
 import RxSwift
 import RxCocoa
 
+import class CoreLocation.CLPlacemark
 import class MapKit.MKPointAnnotation
+
+enum MapViewError: Error, Equatable {
+    case unknown
+}
 
 enum MapViewState {
     case loading
-    case ready(annotations: [MKPointAnnotation])
+    case ready(annotations: [MKPointAnnotation], error: MapViewError?)
+
+    var annotations: [MKPointAnnotation] {
+        switch self {
+        case .loading: return []
+        case .ready(let annotations, _): return annotations
+        }
+    }
 }
 
 enum MapViewAction {
-    case viewLoaded
+    case locationServicesUpdated(userPlacemark: CLPlacemark, annotations: [MKPointAnnotation])
 }
 
 protocol MapViewModelProtocol {
@@ -32,5 +44,24 @@ struct MapViewModel: MapViewModelProtocol {
 
     init(interactor: MapInteractorProtocol) {
         state = Observable.just(MapViewState.loading).asDriver(onErrorJustReturn: .loading)
+    }
+}
+
+extension ObservableType where E == MapViewAction {
+    func toViewState(initialState: MapViewState,
+                     interactor: MapInteractorProtocol) -> Driver<MapViewState> {
+        return self
+            .reduce(initialState, accumulator: MapViewState.reduce)
+            .asDriver(onErrorJustReturn: .ready(annotations: [], error: .unknown))
+            .startWith(initialState)
+    }
+}
+
+private extension MapViewState {
+    static func reduce(state: MapViewState, action: MapViewAction) -> MapViewState {
+        switch (state, action) {
+        case (_, .locationServicesUpdated(_, let annotations)):
+            return .ready(annotations: annotations, error: nil)
+        }
     }
 }
