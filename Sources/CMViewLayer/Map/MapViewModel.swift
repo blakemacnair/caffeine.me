@@ -28,7 +28,7 @@ extension ObservableType where E == MapViewAction {
     func toViewState(initialState: MapViewState) -> Driver<MapViewState> {
         return self
             .scan(initialState, accumulator: MapViewState.reduce)
-            .asDriver(onErrorJustReturn: .ready(annotations: [], error: .unknown))
+            .asDriver(onErrorJustReturn: .ready(userPlacemark: nil, annotations: [], error: .unknown))
             .startWith(initialState)
     }
 }
@@ -36,8 +36,8 @@ extension ObservableType where E == MapViewAction {
 private extension MapViewState {
     static func reduce(state: MapViewState, action: MapViewAction) -> MapViewState {
         switch (state, action) {
-        case (_, .locationServicesUpdated(_, let annotations)):
-            return .ready(annotations: annotations, error: nil)
+        case (_, .locationServicesUpdated(let placemark, let annotations)):
+            return .ready(userPlacemark: placemark, annotations: annotations, error: nil)
         }
     }
 }

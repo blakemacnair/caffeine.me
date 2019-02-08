@@ -73,8 +73,19 @@ final class MapViewController: UIViewController & MapViewControllerProtocol {
         switch state {
         case .loading:
             break
-        case .ready(let annotations, _):
+        case .ready(let userPlacemark, let annotations, _):
             self.annotationsRelay.accept(annotations)
+
+            if let userPlacemark = userPlacemark, let location = userPlacemark.location {
+                let region = generateRegion(from: location.coordinate)
+                self.rootView.setRegion(region, animated: true)
+            }
         }
+    }
+
+    private func generateRegion(from coord: CLLocationCoordinate2D) -> MKCoordinateRegion {
+        return MKCoordinateRegion(center: coord,
+                                  latitudinalMeters: 1000,
+                                  longitudinalMeters: 1000)
     }
 }

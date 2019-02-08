@@ -17,12 +17,12 @@ enum MapViewError: Error, Equatable {
 
 enum MapViewState {
     case loading
-    case ready(annotations: [MKPointAnnotation], error: MapViewError?)
+    case ready(userPlacemark: CLPlacemark?, annotations: [MKPointAnnotation], error: MapViewError?)
 
     var annotations: [MKPointAnnotation] {
         switch self {
         case .loading: return []
-        case .ready(let annotations, _): return annotations
+        case .ready(_, let annotations, _): return annotations
         }
     }
 }
