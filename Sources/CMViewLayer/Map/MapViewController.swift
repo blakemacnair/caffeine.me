@@ -28,7 +28,7 @@ final class MapViewController: UIViewController & MapViewControllerProtocol {
 
     private let rootView = MKMapView()
 
-    private let annotationsRelay = BehaviorRelay<[MKAnnotation]>(value: [])
+    private let annotationsRelay = BehaviorRelay<[VenueAnnotation]>(value: [])
     private let disposeBag = DisposeBag()
 
     convenience init() {
@@ -36,6 +36,14 @@ final class MapViewController: UIViewController & MapViewControllerProtocol {
 
         annotationsRelay
             .asDriver()
+            .distinctUntilChanged { lhs, rhs in
+                let llocs = lhs.map { $0.venue.location }
+                let rlocs = rhs.map { $0.venue.location }
+                for lloc in llocs {
+                    if !rlocs.contains(lloc) { return true }
+                }
+                return false
+            }
             .drive(rootView.rx.annotations)
             .disposed(by: disposeBag)
 
