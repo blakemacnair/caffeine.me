@@ -102,6 +102,7 @@ final class VenueDetailView: UIView {
     private func setup() {
         backgroundColor = .white
         addSubview(titleLabel)
+        addSubview(subtitleLabel)
 
         activateInitialConstraints()
     }
@@ -109,6 +110,11 @@ final class VenueDetailView: UIView {
     private func activateInitialConstraints() {
         titleLabel.snp.makeConstraints { mk in
             mk.top.left.right.equalTo(self.readableContentGuide).inset(8)
+        }
+
+        subtitleLabel.snp.makeConstraints { mk in
+            mk.left.right.equalTo(self.readableContentGuide).inset(8)
+            mk.top.equalTo(titleLabel.snp.bottom).offset(8)
         }
     }
 }
