@@ -12,12 +12,12 @@ import RxCocoa
 import struct CMFourSquareLayer.Venue
 
 final class VenueDetailCoordinator: BaseCoordinator<Void> {
-    private let navigationController: UINavigationController
+    private let presentingViewController: UIViewController
     private let viewController: VenueDetailViewControllerProtocol & UIViewController
     private let viewModel: VenueDetailViewModelProtocol
 
-    init(venue: Venue, navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    init(venue: Venue, presentingViewController: UIViewController) {
+        self.presentingViewController = presentingViewController
         self.viewController = VenueDetailViewController()
         self.viewModel = VenueDetailViewModel(venue: venue)
     }
@@ -30,7 +30,9 @@ final class VenueDetailCoordinator: BaseCoordinator<Void> {
             .map { _ in return () }
             .asObservable()
 
-        navigationController.present(viewController, animated: true)
+        let wrapperNavController = UINavigationController(rootViewController: viewController)
+
+        presentingViewController.present(wrapperNavController, animated: true)
 
         return Observable<Void>.never().takeUntil(dismissEvent).asSignal(onErrorJustReturn: ())
     }
