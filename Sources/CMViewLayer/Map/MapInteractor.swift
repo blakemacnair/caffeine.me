@@ -92,13 +92,14 @@ final class MapInteractor: MapInteractorProtocol {
     }
 
     func refreshVenues() {
-        locationRelay.placemark.take(1)
+        locationRelay.placemark
             .filter { $0.location != nil }
             .map { $0.location! }
+            .take(1)
             .flatMapLatest { [unowned self] location -> Observable<[Venue]> in
                 return self.fourSquareRelay.coffeeShopsNear(location: location,
                                                             limit: 10,
-                                                            radius: 500).debug("NEARBY", trimOutput: true)
+                                                            radius: 1000)
             }
             .bind(to: self.venuesRelay)
             .disposed(by: disposeBag)
