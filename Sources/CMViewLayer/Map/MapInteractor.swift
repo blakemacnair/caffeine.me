@@ -13,6 +13,8 @@ import CMLocationLayer
 import CMFourSquareLayer
 
 import class CoreLocation.CLPlacemark
+import class CoreLocation.CLLocation
+import typealias CoreLocation.CLLocationDistance
 import enum CoreLocation.CLAuthorizationStatus
 
 enum MapInteractorState: Equatable {
@@ -35,6 +37,8 @@ final class MapInteractor: MapInteractorProtocol {
     }
     private let stateRelay = BehaviorRelay<MapInteractorState>(value: .loading)
 
+    private let distanceFilter: CLLocationDistance = 100
+
     private let venuesRelay = BehaviorRelay<[Venue]>(value: [])
 
     private let locationRelay: CMLocationRelayProtocol
@@ -47,7 +51,21 @@ final class MapInteractor: MapInteractorProtocol {
         self.locationRelay = locationRelay
         self.fourSquareRelay = fourSquareRelay
 
-        Observable.combineLatest(locationRelay.placemark, venuesRelay.asObservable())
+        let seed: CLLocation? = CLLocation(latitude: 0, longitude: 0)
+
+        let placemarkUpdate = locationRelay.placemark.map { $0.location }
+            .scan(seed,
+                  accumulator: { [distanceFilter] seed, newValue -> CLLocation? in
+                    guard let seed = seed, let newLocation = newValue else { return newValue }
+                    let shouldUpdate = newLocation.distance(from: seed) > distanceFilter
+                    return shouldUpdate ? newValue : seed
+            })
+            .distinctUntilChanged()
+            .withLatestFrom(locationRelay.placemark)
+
+
+        Observable.combineLatest(placemarkUpdate,
+                                 venuesRelay.asObservable())
             .map { (arg) -> MapInteractorState in
                 let (placemark, venues) = arg
                 let annotations = venues.compactMap { VenueAnnotation($0) }

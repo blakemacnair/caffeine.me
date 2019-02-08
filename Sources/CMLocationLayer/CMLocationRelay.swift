@@ -52,7 +52,7 @@ public final class CMLocationRelay: CMLocationRelayProtocol {
             .bind(to: authStatusRelay)
             .disposed(by: disposeBag)
 
-        placemark = manager.rx.placemark.throttle(5, scheduler: MainScheduler.instance)
+        placemark = manager.rx.placemark
         heading = manager.rx.heading
     }
 
