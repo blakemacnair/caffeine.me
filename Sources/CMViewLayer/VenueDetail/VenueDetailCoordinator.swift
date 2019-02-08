@@ -9,6 +9,18 @@
 import RxSwift
 import RxCocoa
 
-final class VenueDetailCoordinator: BaseCoordinator<Void> {
+import struct CMFourSquareLayer.Venue
 
+final class VenueDetailCoordinator: BaseCoordinator<Void> {
+    private let viewController: VenueDetailViewControllerProtocol & UIViewController
+    private let viewModel: VenueDetailViewModelProtocol
+
+    init(venue: Venue) {
+        self.viewController = VenueDetailViewController()
+        self.viewModel = VenueDetailViewModel(venue: venue)
+    }
+
+    override func start() -> Signal<Void> {
+        return Signal.never()
+    }
 }

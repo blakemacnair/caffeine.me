@@ -9,11 +9,14 @@
 import RxSwift
 import RxCocoa
 
+import struct CMFourSquareLayer.Venue
+
 protocol VenueDetailViewControllerProtocol {
     var state: BehaviorRelay<VenueDetailViewState> { get }
     var uiEvents: PublishRelay<VenueDetailViewAction> { get }
 }
 
-final class VenueDetailViewController: UIViewController {
-    
+final class VenueDetailViewController: UIViewController, VenueDetailViewControllerProtocol {
+    let state = BehaviorRelay<VenueDetailViewState>(value: .loading)
+    let uiEvents = PublishRelay<VenueDetailViewAction>()
 }

@@ -12,7 +12,7 @@ import RxCocoa
 import CMFourSquareLayer
 
 protocol VenueDetailInteractorProtocol {
-
+    // TODO: Get venue details on init
 }
 
 final class VenueDetailInteractor {

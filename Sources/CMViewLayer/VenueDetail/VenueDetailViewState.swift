@@ -8,14 +8,20 @@
 
 import struct CMFourSquareLayer.Venue
 
-enum VenueDetailViewState {
+enum VenueDetailViewError: Error, Equatable {
+    case unknown
+}
+
+enum VenueDetailViewState: Equatable {
+    case loading
     case ready(Venue)
 }
 
-enum VenueDetailViewAction {
+enum VenueDetailViewAction: Equatable {
     case tappedExit
 }
 
-enum VenueDetailCoordinatorRequest {
+enum VenueDetailCoordinatorRequest: Equatable {
     case dismissView
+    case displayError(VenueDetailViewError)
 }
