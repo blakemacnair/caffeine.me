@@ -9,7 +9,10 @@
 import RxSwift
 import RxCocoa
 
-import MapKit
+import class MapKit.MKMapView
+import protocol MapKit.MKAnnotation
+import struct MapKit.MKCoordinateRegion
+import struct CoreLocation.CLLocationCoordinate2D
 import RxMKMapView
 
 protocol MapViewControllerProtocol {
@@ -23,7 +26,7 @@ final class MapViewController: UIViewController & MapViewControllerProtocol {
 
     private let rootView = MKMapView()
 
-    private let annotationsRelay = BehaviorRelay<[MKPointAnnotation]>(value: [])
+    private let annotationsRelay = BehaviorRelay<[MKAnnotation]>(value: [])
     private let disposeBag = DisposeBag()
 
     convenience init() {

@@ -38,6 +38,9 @@ private extension MapViewState {
         switch (state, action) {
         case (_, .locationServicesUpdated(let placemark, let annotations)):
             return .ready(userPlacemark: placemark, annotations: annotations, error: nil)
+        case (_, .annotationTapped(_)):
+            assertionFailure("Haven't programmed this path yet")
+            return state
         }
     }
 }
