@@ -12,14 +12,21 @@ import RxCocoa
 import MapKit
 import RxMKMapView
 
-final class MapViewController: UIViewController {
+protocol MapViewControllerProtocol {
+    var state: BehaviorRelay<MapViewState> { get }
+    var uiEvents: PublishRelay<MapViewAction> { get }
+}
+
+final class MapViewController: UIViewController & MapViewControllerProtocol {
+    let state = BehaviorRelay<MapViewState>(value: .loading)
+    let uiEvents = PublishRelay<MapViewAction>()
 
     private let rootView = MKMapView()
 
     private let annotationsRelay = BehaviorRelay<[MKPointAnnotation]>(value: [])
     private let disposeBag = DisposeBag()
 
-    convenience init(viewModel: MapViewModelProtocol) {
+    convenience init() {
         self.init(nibName: nil, bundle: nil)
 
         annotationsRelay
@@ -27,8 +34,7 @@ final class MapViewController: UIViewController {
             .drive(rootView.rx.annotations)
             .disposed(by: disposeBag)
 
-        bindEvents(to: viewModel)
-        bindToState(from: viewModel)
+        driveState()
     }
 
     override func loadView() {
@@ -50,12 +56,13 @@ final class MapViewController: UIViewController {
             .disposed(by: disposeBag)
     }
 
-    private func bindEvents(to viewModel: MapViewModelProtocol) {
-
+    private func driveEventsRelay() {
+        // TODO: Implement user interactions
     }
 
-    private func bindToState(from viewModel: MapViewModelProtocol) {
-        viewModel.state
+    private func driveState() {
+        state
+            .asDriver()
             .drive(onNext: { [unowned self] state in
                 self.configureView(for: state)
             })

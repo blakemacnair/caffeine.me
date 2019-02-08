@@ -17,7 +17,7 @@ import CMFourSquareLayer
 final class MapCoordinator: BaseCoordinator<Void> {
 
     private let navigationController: UINavigationController
-    private let viewController: MapViewController
+    private let viewController: MapViewControllerProtocol & UIViewController
     private let viewModel: MapViewModelProtocol
     private let interactor: MapInteractorProtocol
 
@@ -28,10 +28,11 @@ final class MapCoordinator: BaseCoordinator<Void> {
 
         let locationRelay = CMLocationRelay()
         let fourSquareRelay = CMFourSquareRelay()
+
         self.interactor = MapInteractor(locationRelay: locationRelay,
                                         fourSquareRelay: fourSquareRelay)
-        self.viewModel = MapViewModel(interactor: interactor)
-        self.viewController = MapViewController(viewModel: viewModel)
+        self.viewModel = MapViewModel()
+        self.viewController = MapViewController()
 
         super.init()
     }
@@ -44,9 +45,15 @@ final class MapCoordinator: BaseCoordinator<Void> {
     }
 
     private func startServices() {
-        // TODO: Remove this debug once we move interactor logic into view model
-        interactor.state
-            .toViewAction()
+        self.viewController.uiEvents
+            .bind(to: self.viewModel.actions)
+            .disposed(by: disposeBag)
+
+        self.viewModel.state.debug("MODEL STATE")
+            .drive(self.viewController.state)
+            .disposed(by: disposeBag)
+
+        self.interactor.state.toViewAction().debug("INT ACTION")
             .bind(to: viewModel.actions)
             .disposed(by: disposeBag)
 

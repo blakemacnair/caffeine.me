@@ -19,7 +19,7 @@ struct MapViewModel: MapViewModelProtocol {
 
     var state: Driver<MapViewState>
 
-    init(interactor: MapInteractorProtocol) {
+    init() {
         state = actions.toViewState(initialState: .loading)
     }
 }
